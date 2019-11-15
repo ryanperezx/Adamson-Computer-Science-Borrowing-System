@@ -1,0 +1,61 @@
+﻿<Window x:Class="CSBorrowingSystem.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CSBorrowingSystem"
+        mc:Ignorable="d"
+        Title="Login " Height="475" Width="768.557" WindowStyle="None" WindowStartupLocation="CenterScreen" AllowsTransparency="True" Background="Transparent" >
+    <Border BorderBrush="Gray" BorderThickness="0.5" CornerRadius="20" Background="#FFF8FAFB" >
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="30"/>
+                <ColumnDefinition Width="275*"/>
+                <ColumnDefinition Width="42*"/>
+                <ColumnDefinition Width="30"/>
+                <ColumnDefinition Width="5"/>
+                <ColumnDefinition Width="366*"/>
+                <ColumnDefinition Width="20"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="80"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="20"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="15"/>
+                <RowDefinition Height="20"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="10"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="20"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Border Grid.Row="0" Grid.Column="0" BorderBrush="Gray" BorderThickness="0.5" CornerRadius="20" Background="#FFC8EFFF" Grid.ColumnSpan="4" Grid.RowSpan="12" Margin="0,0,0,0"  >
+            </Border>
+            <Image Source="images\bg.PNG" Grid.Column="5" Grid.RowSpan="9" Grid.ColumnSpan="2" Grid.Row="3" Margin="10,10,0,0"/>
+            <Image Source="images\logo.png" Grid.Column="5"  Grid.Row="1" Grid.RowSpan="4" Margin="0,0,0,10" />
+
+            <TextBlock Text="Welcome Back!" Grid.Column="1" Grid.Row="1" FontFamily="/CSBorrowingSystem;component/#Gelion Medium" FontSize="24" Margin="0,52,0,0" Grid.ColumnSpan="3"/>
+            <TextBlock Text="Enter all the information needed." Grid.Column="1" Grid.Row="2" FontFamily="/CSBorrowingSystem;component/#Gelion Regular" FontSize="14" Grid.ColumnSpan="3" />
+
+            <TextBlock Text="USERNAME" Grid.Column="1" Grid.Row="3" FontFamily="Raleway SemiBold" Grid.ColumnSpan="3" />
+            <TextBox Name="txtUName" Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="2" />
+            <TextBlock Name="txtPassword" Text="PASSWORD" Grid.Column="1" Grid.Row="6" FontFamily="Raleway SemiBold" />
+            <TextBox Grid.Column="1" Grid.Row="7" Grid.ColumnSpan="2" />
+
+
+            <Button Click="BtnLogin_Click"  Name="btnLogin" Content="Login"  Grid.Column="1" Grid.Row="9" Grid.ColumnSpan="2" Background="#FF37A1F6" BorderBrush="{x:Null}" />
+            <TextBlock Text="Forgot Password?" Grid.Column="1" Grid.Row="10" FontFamily="Raleway SemiBold" TextAlignment="Center" Grid.ColumnSpan="2" />
+            <Button Name="btnClose" Height="Auto" Grid.Column="5" Grid.Row="0"  BorderBrush="{x:Null}" Background="{x:Null}" RenderTransformOrigin="0.5,0.5" Margin="333,0,0,0" Click="BtnClose_Click" Grid.ColumnSpan="2" >
+                <Image Source="images/deletee.png" Height="15"  />
+            </Button>
+            <Image Source="images/userr.png" Grid.Row="4" Grid.Column="2" Margin="0,0,0,5" />
+            <Image Source="images/key.png" Grid.Row="7" Grid.Column="2" />
+
+        </Grid>
+
+    </Border>
+
+
+</Window>

@@ -1,0 +1,124 @@
+﻿<Window x:Class="CSBorrowingSystem.Adamson_Computer_Science_Borrowing_System"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CSBorrowingSystem"
+        mc:Ignorable="d"
+        Title="Adamson_Computer_Science_Borrowing_System" Height="600" Width="1100" WindowStyle="None" WindowStartupLocation="CenterScreen" AllowsTransparency="True" Background="Transparent" WindowState="Maximized" >
+    <Border BorderBrush="Gray" BorderThickness="0.5" CornerRadius="20" Background="#FF00A8FF" Margin="0,0,64,0">
+        <Grid Margin="0,0,-67,0" >
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="60"/>
+                <ColumnDefinition Width="3"/>
+                <ColumnDefinition Width="783"/>
+                <ColumnDefinition Width="15*"/>
+                <ColumnDefinition Width="26*"/>
+                <ColumnDefinition Width="215*"/>
+
+
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="43"/>
+                <RowDefinition Height="0"/>
+                <RowDefinition Height="31"/>
+                <RowDefinition Height="26"/>
+                <RowDefinition Height="70"/>
+                <RowDefinition Height="70"/>
+                <RowDefinition Height="70"/>
+                <RowDefinition Height="70"/>
+
+                <RowDefinition Height="54*"/>
+                <RowDefinition Height="115*"/>
+                <RowDefinition Height="21"/>
+                <RowDefinition Height="29"/>
+            </Grid.RowDefinitions>
+            <Border BorderBrush="#FFB9B9B9" BorderThickness="0" CornerRadius="20" Background="White" Grid.Column="2" Grid.RowSpan="12" Grid.ColumnSpan="4" />
+            <Border BorderBrush="#FFB9B9B9" BorderThickness="0" CornerRadius="20" Background="#FFF5F7FA" Grid.Column="3" Grid.RowSpan="12" Grid.ColumnSpan="3" HorizontalAlignment="Right" Width="256"  >
+                <DockPanel/>
+            </Border>
+            <Border BorderBrush="#FFB9B9B9" BorderThickness="0" CornerRadius="20" Background="#FFD3E7FF" Grid.Column="3" Grid.RowSpan="5" Margin="0,0,3,0" Grid.Row="7" Grid.ColumnSpan="3" >
+                <DockPanel/>
+            </Border>
+            <DockPanel Grid.Column="3" Margin="0,60,3,12" Grid.Row="7" Background="#FFE8F1FE" Grid.RowSpan="2" Grid.ColumnSpan="3"/>
+            <TextBlock Grid.Row="7" Grid.Column="3"  Text="RECENT ACTIVITY"  FontFamily="/CSBorrowingSystem;component/#Gelion Regular" FontSize="18" Margin="0,24,7,26" TextAlignment="Center" Foreground="Black" FontStyle="Italic" TextDecorations="{x:Null}" Grid.ColumnSpan="3" />
+
+
+            <Viewbox Grid.Column="3"   Grid.Row="1" Grid.RowSpan="6" Margin="0,0,0,0" Grid.ColumnSpan="3"    >
+                <Calendar Height="379" Width="277" Background="White">
+                    <Calendar.BorderBrush>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="#FFA3AEB9" Offset="0"/>
+                            <GradientStop Color="#FF8399A9" Offset="0.375"/>
+                            <GradientStop Color="#FF718597" Offset="0.375"/>
+                            <GradientStop Color="#FF4E0BFF" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Calendar.BorderBrush>
+                </Calendar>
+            </Viewbox>
+            <Button Name="btnHome" Grid.Column="0" Grid.Row="4" Height="Auto" Background="{x:Null}"  Margin="1,0,0,0" Grid.ColumnSpan="2" BorderBrush="{x:Null}" Click="BtnHome_Click" >
+                <Image Source="images\h1.png"  Width="23"  />
+            </Button>
+            <Button Name="btnBTransact" Grid.Column="0" Grid.Row="5" Height="Auto" Background="{x:Null}"  Margin="1,0,0,0" Grid.ColumnSpan="2" BorderBrush="{x:Null}" Click="BtnBTransact_Click" >
+                <Image Source="images\transaction.png" Width="23" />
+            </Button>
+            <Button Name="btnInventory" Grid.Column="0" Grid.Row="6" Height="Auto" Background="{x:Null}"  Margin="1,0,0,0" Grid.ColumnSpan="2" BorderBrush="{x:Null}" Click="BtnInventory_Click">
+                <Image Source="images\stacked-files.png" Width="23" />
+            </Button>
+            <Button Name="btnAccounts" Grid.Column="0" Grid.Row="7" Height="Auto" Background="{x:Null}" Margin="1,0,0,0" Grid.ColumnSpan="2" BorderBrush="{x:Null}" Click="BtnAccounts_Click">
+                <Image Source="images\avatar.png" Width="23" />
+            </Button>
+            <Button Grid.Column="0" Grid.Row="10" Height="Auto" Background="{x:Null}" Margin="1,0,0,10" Grid.ColumnSpan="2" BorderBrush="{x:Null}" Grid.RowSpan="2">
+                <Image Source="images/logout.png" Height="22" Width="23"   />
+            </Button>
+
+            <Button Grid.Column="5" Grid.Row="0" Height="Auto"   Margin="169,0,4,0" BorderBrush="{x:Null}" Background="{x:Null}" RenderTransformOrigin="0.5,0.5" Click="Button_Click_1" >
+                <Image Source="images\deletee.png" Height="15"  />
+            </Button>
+            <TextBlock Grid.Row="8" Grid.Column="5"  Text="UserName added Item."  FontFamily="/CSBorrowingSystem;component/#Gelion Regular" FontSize="14" Margin="17,6,7,24" Foreground="#FF363636" FontStyle="Italic" TextDecorations="{x:Null}" />
+            <Image Grid.Row="8" Grid.Column="4" Source="images/a.png" Margin="0,0,0,20"  />
+            <TextBlock Grid.Row="9" Grid.Column="5"  FontFamily="/CSBorrowingSystem;component/#Gelion Regular" FontSize="14" Margin="17,10,7,79" Foreground="#FF363636" FontStyle="Italic" TextDecorations="{x:Null}" ><Run Text="UserName "/><Run Text="created account."/></TextBlock>
+            <Image Grid.Row="9" Grid.Column="4" Source="images/b.PNG" Margin="0,0,0,81"  />
+            <TextBlock Grid.Row="9" Grid.Column="5"  FontFamily="/CSBorrowingSystem;component/#Gelion Regular" FontSize="14" Margin="17,58,7,31" Foreground="#FF363636" FontStyle="Italic" TextDecorations="{x:Null}" ><Run Text="UserName "/><Run Text="created account."/></TextBlock>
+            <Image Grid.Row="9" Grid.Column="4" Source="images/c.PNG" Margin="0,50,0,31"  />
+
+            <Button Grid.Column="5" Grid.Row="0" Height="Auto"   Margin="121,0,47,0" BorderBrush="{x:Null}" Background="{x:Null}" RenderTransformOrigin="0.5,0.5" Click="Button_Click_2" >
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleX="-1"/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+                <Image Source="images/minimize.png" Height="18" RenderTransformOrigin="0.5,0.583"  />
+            </Button>
+            <Button Grid.Column="5" Grid.Row="0" Height="Auto"   Margin="73,0,94,0" BorderBrush="{x:Null}" Background="{x:Null}" RenderTransformOrigin="0.5,0.5" >
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleX="-1"/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+                <Image Source="images/maximize.png" Height="18"  />
+            </Button>
+            
+            
+            <Border x:Name="Accounts" BorderBrush="#FFB9B9B9" BorderThickness="0" CornerRadius="20" Background="White" Grid.Column="2" Grid.RowSpan="10" Grid.Row="2" >
+                <local:Accounts Width="Auto"/>
+            </Border>
+            <Border x:Name="Inventory" BorderBrush="#FFB9B9B9" BorderThickness="0" CornerRadius="20" Background="White" Grid.Column="2" Grid.RowSpan="10" Grid.Row="2" >
+                <local:Inventory/>
+            </Border>
+            <Border x:Name="BTransaction" BorderBrush="#FFB9B9B9" BorderThickness="0" CornerRadius="20" Background="White" Grid.Column="2" Grid.RowSpan="10" Grid.Row="2" >
+                <local:BorrowingTransaction/>
+            </Border>
+            <Border x:Name="Home" BorderBrush="#FFB9B9B9" BorderThickness="0" CornerRadius="20" Background="White" Grid.Column="2" Grid.RowSpan="10" Grid.Row="2" >
+                <local:Home/>
+            </Border>
+        </Grid>
+    </Border>
+</Window>

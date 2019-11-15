@@ -1,0 +1,58 @@
+﻿<UserControl x:Class="CSBorrowingSystem.Inventory"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:CSBorrowingSystem"
+             mc:Ignorable="d" 
+             d:DesignHeight="500" d:DesignWidth="800" Background="White">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="32*"/>
+            <ColumnDefinition Width="469*"/>
+            <ColumnDefinition Width="50*"/>
+            <ColumnDefinition Width="50"/>
+            <ColumnDefinition Width="48"/>
+            <ColumnDefinition Width="8"/>
+
+            <ColumnDefinition Width="48*"/>
+            <ColumnDefinition Width="7*"/>
+            <ColumnDefinition Width="48*"/>
+
+            <ColumnDefinition Width="20"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="6"/>
+            <RowDefinition Height="41"/>
+            <RowDefinition Height="10*"/>
+            <RowDefinition Height="423*"/>
+            <RowDefinition Height="20"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="   INVENTORY" Grid.Column="2" Grid.Row="1" FontSize="20" FontFamily="Raleway Black" Margin="3,15,15,5" Foreground="#FF060606" Grid.RowSpan="2"/>
+        <DataGrid Name="DtgInventory" BorderThickness="1.5" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="9" AutoGenerateColumns="False" BorderBrush="#892E2E2E" Background="#FFFAFAFA" FontFamily="Raleway SemiBold" FontSize="12">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="#"/>
+                <DataGridTextColumn Header="ITEM ID"/>
+                <DataGridTextColumn Header="ITEM NAME" Width="150" />
+                <DataGridTextColumn Header="ITEM TYPE" />
+                <DataGridTextColumn Header="ITEM BRAND" />
+                <DataGridTextColumn Header="QTY" />
+                <DataGridTextColumn Header="REMARKS" />
+                <DataGridCheckBoxColumn Header="SELECT"></DataGridCheckBoxColumn>
+
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Name="btnSave" Grid.Column="9" Grid.Row="1" Height="Auto" FontFamily="Raleway SemiBold" Background="#FFFFF300" BorderBrush="{x:Null}">
+            <Image Source="images\tick.png" Width="17"/>
+        </Button>
+        <Button Name="btnDel" Grid.Column="7" Grid.Row="1" Height="Auto" Click="Button_Click" FontFamily="Raleway SemiBold" Background="#FFFF2E2E" BorderBrush="{x:Null}">
+            <Image Source="images\trash.png" Width="17"/>
+        </Button>
+        <Button Name="btnAdd" Grid.Column="5" Grid.Row="1"  Height="Auto" FontFamily="Raleway SemiBold" Background="#FF0A8CB2" BorderBrush="{x:Null}" Margin="1,0,0,0">
+            <Image Source="images\plus.png"/>
+        </Button>
+        <Image Source="images\sticky-note.png"  Grid.Row="1" Grid.Column="1" Margin="0,10,2,0"/>
+    </Grid>
+</UserControl>
