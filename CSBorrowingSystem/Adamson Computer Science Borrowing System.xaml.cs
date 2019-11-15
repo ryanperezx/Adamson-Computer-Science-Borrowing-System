@@ -76,12 +76,32 @@ namespace CSBorrowingSystem
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            this.Close();
+            string sMessageBoxText = "Do you want to exit the application?";
+            string sCaption = "Exit";
+            MessageBoxButton btnMessageBox = MessageBoxButton.YesNoCancel;
+            MessageBoxImage icnMessageBox = MessageBoxImage.Warning;
+
+            MessageBoxResult dr = MessageBox.Show(sMessageBoxText, sCaption, btnMessageBox, icnMessageBox);
+
+            switch (dr)
+            {
+                case MessageBoxResult.Yes:
+                    Application.Current.Shutdown();
+                    break;
+                case MessageBoxResult.No:
+                    break;
+            }
         }
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
+            this.WindowState = WindowState.Normal;
 
+        }
+
+        private void Button_Click_3(object sender, RoutedEventArgs e)
+        {
+            this.WindowState = WindowState.Maximized;
         }
     }
 }

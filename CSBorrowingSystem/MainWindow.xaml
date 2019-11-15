@@ -42,7 +42,7 @@
             <TextBlock Text="USERNAME" Grid.Column="1" Grid.Row="3" FontFamily="Raleway SemiBold" Grid.ColumnSpan="3" />
             <TextBox Name="txtUName" Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="2" />
             <TextBlock Name="txtPassword" Text="PASSWORD" Grid.Column="1" Grid.Row="6" FontFamily="Raleway SemiBold" />
-            <TextBox Grid.Column="1" Grid.Row="7" Grid.ColumnSpan="2" />
+            <PasswordBox Grid.Column="1" Grid.Row="7" Grid.ColumnSpan="2" />
 
 
             <Button Click="BtnLogin_Click"  Name="btnLogin" Content="Login"  Grid.Column="1" Grid.Row="9" Grid.ColumnSpan="2" Background="#FF37A1F6" BorderBrush="{x:Null}" />
