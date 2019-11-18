@@ -28,13 +28,14 @@
             <DataGrid.Columns>
                 <DataGridTextColumn Header="NO."  />
                 <DataGridCheckBoxColumn Header="RETURN?" Binding="{Binding isReturned}"/>
-                <DataGridTextColumn Header="FULL NAME" Binding="{Binding fullName}" />
-                <DataGridTextColumn Header="ITEM NAME"  Binding="{Binding itemName}"/>
-                <DataGridTextColumn Header="ITEM BRAND" Binding="{Binding brand}"/>
-                <DataGridTextColumn Header="DATE BORROWED" Binding="{Binding dateBorrowed}"/>
-                <DataGridTextColumn Header="SUBJECT" Binding="{Binding subj}"/>
-                <DataGridTextColumn Header="SCHEDULE" Binding="{Binding sched}"/>
-                <DataGridTextColumn Header="REMARKS" Binding="{Binding remarks}"/>
+                <DataGridTextColumn Header="FULL NAME" Binding="{Binding fullName}" IsReadOnly="True" />
+                <DataGridTextColumn Header="ITEM NAME"  Binding="{Binding itemName}" IsReadOnly="True" />
+                <DataGridTextColumn Header="ITEM BRAND" Binding="{Binding brand}" IsReadOnly="True" />
+                <DataGridTextColumn Header="QUANTITY" Binding="{Binding qty}" IsReadOnly="True"/>
+                <DataGridTextColumn Header="DATE BORROWED" Binding="{Binding dateBorrowed}" IsReadOnly="True" />
+                <DataGridTextColumn Header="SUBJECT" Binding="{Binding subject}" IsReadOnly="True" />
+                <DataGridTextColumn Header="SCHEDULE" Binding="{Binding schedule}" IsReadOnly="True" />
+                <DataGridTextColumn Header="REMARKS" Binding="{Binding remarks}" IsReadOnly="True" />
             </DataGrid.Columns>
 
         </DataGrid>
