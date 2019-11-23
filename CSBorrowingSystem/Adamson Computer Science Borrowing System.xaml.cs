@@ -39,9 +39,10 @@ namespace CSBorrowingSystem
             int zOrder = Panel.GetZIndex(Accounts) + 1;
             int zOrder2 = Panel.GetZIndex(BTransaction) + 1;
             int zOrder3 = Panel.GetZIndex(Inventory) + 1;
-            int zOrder4 = zOrder + zOrder2 + zOrder3;
+            int zOrder4 = Panel.GetZIndex(Reports) + 1;
+            int zOrder5 = zOrder + zOrder2 + zOrder3 + zOrder4;
 
-            Panel.SetZIndex(Home, zOrder4);
+            Panel.SetZIndex(Home, zOrder5);
         }
 
         private void BtnBTransact_Click(object sender, RoutedEventArgs e)
@@ -49,9 +50,10 @@ namespace CSBorrowingSystem
             int zOrder = Panel.GetZIndex(Accounts) + 1;
             int zOrder2 = Panel.GetZIndex(Home) + 1;
             int zOrder3 = Panel.GetZIndex(Inventory) + 1;
-            int zOrder4 = zOrder + zOrder2 + zOrder3;
+            int zOrder4 = Panel.GetZIndex(Reports) + 1;
+            int zOrder5 = zOrder + zOrder2 + zOrder3 + zOrder4;
 
-            Panel.SetZIndex(BTransaction, zOrder4);
+            Panel.SetZIndex(BTransaction, zOrder5);
         }
 
         private void BtnInventory_Click(object sender, RoutedEventArgs e)
@@ -59,9 +61,10 @@ namespace CSBorrowingSystem
             int zOrder = Panel.GetZIndex(Accounts) + 1;
             int zOrder2 = Panel.GetZIndex(BTransaction) + 1;
             int zOrder3 = Panel.GetZIndex(Home) + 1;
-            int zOrder4 = zOrder + zOrder2 + zOrder3;
+            int zOrder4 = Panel.GetZIndex(Reports) + 1;
+            int zOrder5 = zOrder + zOrder2 + zOrder3 + zOrder4;
 
-            Panel.SetZIndex(Inventory, zOrder4);
+            Panel.SetZIndex(Inventory, zOrder5);
         }
 
         private void BtnAccounts_Click(object sender, RoutedEventArgs e)
@@ -69,9 +72,10 @@ namespace CSBorrowingSystem
             int zOrder = Panel.GetZIndex(Inventory) + 1;
             int zOrder2 = Panel.GetZIndex(BTransaction) + 1;
             int zOrder3 = Panel.GetZIndex(Home) + 1;
-            int zOrder4 = zOrder + zOrder2 + zOrder3;
+            int zOrder4 = Panel.GetZIndex(Reports) + 1;
+            int zOrder5 = zOrder + zOrder2 + zOrder3 + zOrder4;
 
-            Panel.SetZIndex(Accounts, zOrder4);
+            Panel.SetZIndex(Accounts, zOrder5);
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
@@ -102,6 +106,17 @@ namespace CSBorrowingSystem
         private void Button_Click_3(object sender, RoutedEventArgs e)
         {
             this.WindowState = WindowState.Maximized;
+        }
+
+        private void btnReportsClick(object sender, RoutedEventArgs e)
+        {
+            int zOrder = Panel.GetZIndex(Inventory) + 1;
+            int zOrder2 = Panel.GetZIndex(BTransaction) + 1;
+            int zOrder3 = Panel.GetZIndex(Home) + 1;
+            int zOrder4 = Panel.GetZIndex(Accounts) + 1;
+            int zOrder5 = zOrder + zOrder2 + zOrder3 + zOrder4;
+
+            Panel.SetZIndex(Reports, zOrder5);
         }
     }
 }

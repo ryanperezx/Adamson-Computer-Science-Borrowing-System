@@ -35,7 +35,9 @@
                 <RowDefinition Height="21"/>
                 <RowDefinition Height="29"/>
             </Grid.RowDefinitions>
-            <Border BorderBrush="#FFB9B9B9" BorderThickness="0" CornerRadius="20" Background="White" Grid.Column="2" Grid.RowSpan="12" Grid.ColumnSpan="5" />
+            <Border BorderBrush="#FFB9B9B9" BorderThickness="0" CornerRadius="20" Background="White" Grid.Column="2" Grid.RowSpan="12" Grid.ColumnSpan="5" >
+                <TextBlock  Text="   Adamson Computer Science Department Equipment Management System" Margin="0,10,0,0" FontFamily="/CSBorrowingSystem;component/#Gelion Medium" FontSize="22"/>
+            </Border>
             <Border BorderBrush="#FFB9B9B9" BorderThickness="0" CornerRadius="20" Background="#FFF5F7FA" Grid.Column="4" Grid.RowSpan="12" Grid.ColumnSpan="3" HorizontalAlignment="Right" Width="256"  >
                 <DockPanel/>
             </Border>
@@ -67,7 +69,7 @@
             <Button Name="btnInventory" Grid.Column="0" Grid.Row="6" Height="Auto" Background="{x:Null}"  Margin="1,0,0,0" Grid.ColumnSpan="2" BorderBrush="{x:Null}" Click="BtnInventory_Click">
                 <Image Source="images\stacked-files.png" Width="23" />
             </Button>
-            <Button Name="btnAccounts" Grid.Column="0" Grid.Row="7" Height="Auto" Background="{x:Null}" Margin="1,0,0,0" Grid.ColumnSpan="2" BorderBrush="{x:Null}" Click="BtnAccounts_Click">
+            <Button Name="btnAccounts" Grid.Column="0" Grid.Row="8" Height="Auto" Background="{x:Null}" Margin="1,0,0,99" Grid.ColumnSpan="2" BorderBrush="{x:Null}" Click="BtnAccounts_Click" Grid.RowSpan="2">
                 <Image Source="images\avatar.png" Width="23" />
             </Button>
             <Button Grid.Column="0" Grid.Row="10" Height="Auto" Background="{x:Null}" Margin="1,0,0,10" Grid.ColumnSpan="2" BorderBrush="{x:Null}" Grid.RowSpan="2">
@@ -117,9 +119,16 @@
             <Border x:Name="BTransaction" BorderBrush="#FFB9B9B9" BorderThickness="0" CornerRadius="20" Background="White" Grid.Column="2" Grid.RowSpan="10" Grid.Row="2" Grid.ColumnSpan="2" >
                 <local:BorrowingTransaction/>
             </Border>
+            <Border x:Name="Reports" BorderBrush="#FFB9B9B9" BorderThickness="0" CornerRadius="20" Background="White" Grid.Column="2" Grid.RowSpan="10" Grid.Row="2" Grid.ColumnSpan="2" >
+                <local:Reports/>
+            </Border>
             <Border x:Name="Home" BorderBrush="#FFB9B9B9" BorderThickness="0" CornerRadius="20" Background="White" Grid.Column="2" Grid.RowSpan="10" Grid.Row="2" Grid.ColumnSpan="2" >
                 <local:Home/>
             </Border>
+            <Image HorizontalAlignment="Left" Height="85" Grid.RowSpan="4" VerticalAlignment="Top" Width="60" Margin="1,15,0,0" Source="images/logofinal.png" Grid.ColumnSpan="2"/>
+            <Button x:Name="btnReports" Grid.Column="0" Grid.Row="7" Height="Auto" Background="{x:Null}" Margin="1,0,0,0" Grid.ColumnSpan="2" BorderBrush="{x:Null}" Click="btnReportsClick" >
+                <Image Source="images/reportt.png" Width="28" Height="60" />
+            </Button>
         </Grid>
     </Border>
 </Window>
