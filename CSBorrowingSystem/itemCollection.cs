@@ -61,10 +61,11 @@ namespace CSBorrowingSystem
             get;
             set;
         }
-        public string status
+        private string _remarks;
+        public string remarks
         {
-            get;
-            set;
+            get { return _remarks; }
+            set { _remarks = value; OnPropertyChanged("remarks"); }
         }
 
         public event PropertyChangedEventHandler PropertyChanged = delegate { };

@@ -36,7 +36,7 @@ namespace CSBorrowingSystem
             SqlCeConnection conn = DBUtils.GetDBConnection();
             conn.Open();
             list.Clear();
-            using (SqlCeCommand cmd = new SqlCeCommand("SELECT (br.fName + br.mName + br.lName) as fullName, it.itemName, it.brand, pr.qty, pr.itemCode, pr.transactNo, pr.dateBorrowed, pr.subject, pr.schedule, pr.remarks from tbl_pendingReturn pr INNER JOIN tbl_borrower br on pr.idNo = br.idNo INNER JOIN tbl_items it on it.itemCode = pr.itemCode where pr.status = 'no'", conn))
+            using (SqlCeCommand cmd = new SqlCeCommand("SELECT (s.fName + ' ' + s.mName + ' ' + s.lName) as fullName, it.itemName, it.brand, b.qtyBorrowed, b.itemCode, b.transactID, b.dateBorrowed, b.subjectName from tbl_Borrow b INNER JOIN tbl_Student s on s.studentID = b.studentID INNER JOIN tbl_Items it on it.itemCode = b.itemCode", conn))
             {
                 using (DbDataReader reader = cmd.ExecuteResultSet(ResultSetOptions.Scrollable))
                 {
@@ -48,12 +48,10 @@ namespace CSBorrowingSystem
                             string itemName = reader["itemName"].ToString();
                             string brand = reader["brand"].ToString();
                             string dateBorrowed = reader["dateBorrowed"].ToString();
-                            string subject = reader["subject"].ToString();
-                            string schedule = reader["schedule"].ToString();
-                            string remarks = reader["remarks"].ToString();
+                            string subject = reader["subjectName"].ToString();
                             string itemCode = reader["itemCode"].ToString();
-                            string transactNo = reader["transactNo"].ToString();
-                            int qty = Convert.ToInt32(reader["qty"]);
+                            string transactNo = reader["transactID"].ToString();
+                            int qtyBorrowed = Convert.ToInt32(reader["qtyBorrowed"]);
 
 
                             list.Add(new itemCollection
@@ -63,11 +61,9 @@ namespace CSBorrowingSystem
                                 brand = brand,
                                 itemCode = itemCode,
                                 transactNo = transactNo,
-                                qty = qty,
+                                qty = qtyBorrowed,
                                 dateBorrowed = dateBorrowed,
-                                subject = subject,
-                                schedule = schedule,
-                                status = remarks
+                                subject = subject
                             });
 
                         }
@@ -96,25 +92,49 @@ namespace CSBorrowingSystem
                         {
                             SqlCeConnection conn = DBUtils.GetDBConnection();
                             conn.Open();
-                            using (SqlCeCommand cmd = new SqlCeCommand("UPDATE tbl_items set qty = qty + @qty where itemCode = @itemCode", conn))
+                            using (SqlCeCommand cmd = new SqlCeCommand("UPDATE tbl_Items set quantityOnStock = quantityOnStock + @qty where ItemCode = @itemCode", conn))
                             {
                                 cmd.Parameters.AddWithValue("@qty", row.qty);
                                 cmd.Parameters.AddWithValue("@itemCode", row.itemCode);
                                 try
                                 {
                                     cmd.ExecuteNonQuery();
-                                    using (SqlCeCommand cmd1 = new SqlCeCommand("UPDATE tbl_pendingReturn set status = 'returned' where transactNo = @transactNo", conn))
+                                    using (SqlCeCommand cmd1 = new SqlCeCommand("INSERT into tbl_Return (StudentId, ItemCode, BorrowID, DateReturned, ReceivedBy, Remarks, qtyReturned) SELECT StudentID, ItemCode, BorrowID, @dateReturned, @ReceivedBy, @Remarks, @qtyReturned) from tbl_Borrow where transactID = @transactID", conn))
                                     {
-                                        cmd1.Parameters.AddWithValue("@transactNo", row.transactNo);
+                                        cmd1.Parameters.AddWithValue("@transactID", row.transactNo);
+                                        cmd1.Parameters.AddWithValue("@dateReturned", DateTime.Today);
+                                        cmd1.Parameters.AddWithValue("@receivedBy", "dummy");
+                                        cmd1.Parameters.AddWithValue("@qtyReturned", row.qty);
+                                        if (string.IsNullOrEmpty(row.remarks))
+                                        {
+                                            cmd1.Parameters.AddWithValue("@remarks", "none");
+                                        }
+                                        else
+                                        {
+                                            cmd1.Parameters.AddWithValue("@remarks", row.remarks);
+                                        }
                                         try
                                         {
                                             cmd1.ExecuteNonQuery();
+                                            using(SqlCeCommand cmd2 = new SqlCeCommand("DELETE from tbl_Borrow where transactID = @transactID",conn))
+                                            {
+                                                cmd2.Parameters.AddWithValue("@transactID", row.transactNo);
+                                                try
+                                                {
+                                                    cmd2.ExecuteNonQuery();
+                                                }
+                                                catch(SqlCeException ex)
+                                                {
+                                                    MessageBox.Show("Error! Log has been updated with the error." + ex);
+                                                    return;
+                                                }
+                                            }
                                             MessageBox.Show("Borrowed item(s) has been returned!");
                                             LoadCollectionData();
                                         }
                                         catch (SqlCeException ex)
                                         {
-                                            MessageBox.Show("Error! Log has been updated with the error.");
+                                            MessageBox.Show("Error! Log has been updated with the error." + ex);
                                             return;
                                         }
                                     }
@@ -125,11 +145,10 @@ namespace CSBorrowingSystem
                                     return;
                                 }
                             }
-                            MessageBox.Show("Existing!");
                         }
                         else
                         {
-                            MessageBox.Show("Not existing!");
+                            MessageBox.Show("There are no data to be returned!");
                         }
                     }
                     break;
