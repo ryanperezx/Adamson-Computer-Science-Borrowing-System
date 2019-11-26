@@ -1,0 +1,51 @@
+﻿<UserControl x:Class="CSBorrowingSystem.Accounts"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:CSBorrowingSystem"
+             mc:Ignorable="d" 
+             d:DesignHeight="600" Background="White" Width="800">
+    <Grid>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="39*"/>
+            <ColumnDefinition Width="85*"/>
+            <ColumnDefinition Width="241*"/>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="49*"/>
+            <ColumnDefinition Width="300*"/>
+            <ColumnDefinition Width="46.4"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="7"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="27*"/>
+            <RowDefinition Height="100*"/>
+            <RowDefinition Height="270*"/>
+            <RowDefinition Height="36*"/>
+            <RowDefinition Height="20"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Column="2" Text="Administrator" VerticalAlignment="Bottom" Height="31" FontFamily="Raleway SemiBold" FontSize="18" Foreground="#FF464646" Margin="3.8,0,48.6,0.2" Grid.ColumnSpan="4" Grid.Row="1"/>
+        <TextBlock Grid.Column="6" Text="Student Assistants" VerticalAlignment="Bottom" Height="31" FontFamily="Raleway SemiBold" FontSize="18" Foreground="#FF464646" Margin="0.4,0,1.6,0.2" Grid.Row="1"/>
+        <Image Grid.Column="1" Source="images/boss.png" Margin="0,7,8.2,25.8" Grid.RowSpan="3" />
+        <Image Grid.Column="5" Source="images/student.png" Margin="0.2,7,0,1.2" Grid.RowSpan="2" HorizontalAlignment="Left" Width="49" Grid.ColumnSpan="2"  />
+        <Image Grid.ColumnSpan="2" Grid.Column="1" HorizontalAlignment="Left" Height="97" Margin="10,3.2,0,0" Grid.Row="3" VerticalAlignment="Top" Width="108"/>
+        <Image Grid.Column="1"  Grid.Row="3" Source="images/businessman.png" Stretch="Fill" Grid.ColumnSpan="2" Margin="0,0.2,0,0"/>
+        <TextBlock Grid.Column="2" Text="Administrator" VerticalAlignment="Bottom" Height="31" FontFamily="Raleway SemiBold" FontSize="18" Foreground="#FF464646" Margin="3.8,0,48.6,0.2" Grid.ColumnSpan="4" Grid.Row="1"/>
+        <TextBlock Grid.Column="3"  Grid.Row="3" Text="Mr. Edward D. Bustillos" VerticalAlignment="Bottom" Height="16" FontFamily="Raleway SemiBold" FontSize="16" Foreground="#FF464646" Margin="10,0,19.8,81" Grid.ColumnSpan="2"/>
+        <TextBlock Grid.Column="3"  Grid.Row="3" Text="Chairperson" VerticalAlignment="Bottom" Height="15" FontFamily="Raleway SemiBold" Foreground="#FF464646" Margin="10,0,19.8,61" Grid.ColumnSpan="2"/>
+        <TextBlock Grid.Column="3"  Grid.Row="3" Text="Computer Science Department" VerticalAlignment="Bottom" Height="15" FontFamily="Raleway SemiBold" Foreground="#FF464646" Margin="10,0,19.8,46" Grid.ColumnSpan="2"/>
+        <Button Name="addSA" Content="Add Student Assistant" Grid.Column="1" Grid.Row="5"  Grid.ColumnSpan="4" Click="AddSA_Click" Height="Auto" Background="#FF00B8C1" BorderBrush="{x:Null}" Margin="0,0,19.8,0"/>
+        <local:AddSA BorderBrush="Gray" BorderThickness="1" x:Name="AddSAForm" Visibility="Hidden" Grid.Column="6" HorizontalAlignment="Left" Height="424" Grid.RowSpan="4" VerticalAlignment="Top" Width="348" Margin="0.4,38.8,-2,0" Grid.Row="1" Grid.ColumnSpan="2"/>
+        <ScrollViewer HorizontalAlignment="Left" Background="Green" Height="469" Margin="0.2,9.8,0,0" VerticalAlignment="Top" Width="347" VerticalScrollBarVisibility="Auto" Grid.Column="5" Grid.ColumnSpan="2" Grid.Row="2" Grid.RowSpan="3">
+            <StackPanel x:Name="StudASP" Background="White"/>
+        </ScrollViewer>
+        <ScrollViewer HorizontalAlignment="Left" Background="Green" Height="469" Margin="0.2,9.8,0,0" VerticalAlignment="Top" Width="347" VerticalScrollBarVisibility="Auto" Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="2" Grid.RowSpan="3">
+            <StackPanel x:Name="AdminSP" Background="White"/>
+        </ScrollViewer>
+        
+    </Grid>
+</UserControl>
