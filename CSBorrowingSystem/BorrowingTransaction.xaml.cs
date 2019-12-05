@@ -63,7 +63,7 @@ namespace CSBorrowingSystem
                                 cmd1.Parameters.AddWithValue("@SubjectName", txtSubject.Text);
                                 cmd1.Parameters.AddWithValue("@Professor", txtProf.Text);     //not in the Borrow DB
                                 cmd1.Parameters.AddWithValue("@GroupNumber", txtGroupNo.Text);   // not in the Borrow DB
-                                cmd1.Parameters.AddWithValue("@ItemCode", item); //not in the Borrow DB
+                                cmd1.Parameters.AddWithValue("@ItemCode", item); 
                                 cmd1.Parameters.AddWithValue("@DateBorrowed", DateTime.Now.Date.ToString("MM/dd/yyyy"));  //insert date
                                 
                        
