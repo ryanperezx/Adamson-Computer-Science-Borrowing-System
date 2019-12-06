@@ -4,10 +4,12 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CSBorrowingSystem"
+        xmlns:domain="clr-namespace:MaterialDesignColors.WpfExample.Domain"
+
         mc:Ignorable="d"
         Title="Adamson_Computer_Science_Borrowing_System" Height="600" Width="1100" WindowStyle="None" WindowStartupLocation="CenterScreen" AllowsTransparency="True" Background="Transparent" WindowState="Normal" >
-    <Border BorderBrush="Gray" BorderThickness="0.5" CornerRadius="20" Background="#FF00A8FF" Margin="0,0,64,0">
-        <Grid Margin="0,0,-67,0" >
+    <Border BorderBrush="Gray" BorderThickness="0.5" CornerRadius="20" Background="#FF00A8FF" >
+        <Grid>
 
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="60"/>
@@ -60,19 +62,19 @@
                     </Calendar.BorderBrush>
                 </Calendar>
             </Viewbox>
-            <Button Name="btnHome" Grid.Column="0" Grid.Row="4" Height="Auto" Background="{x:Null}"  Margin="1,0,0,0" Grid.ColumnSpan="2" BorderBrush="{x:Null}" Click="BtnHome_Click" >
+            <Button  ToolTip="Home" Name="btnHome" Grid.Column="0" Grid.Row="4" Height="Auto" Background="{x:Null}"  Margin="1,0,0,0" Grid.ColumnSpan="2" BorderBrush="{x:Null}" Click="BtnHome_Click" >
                 <Image Source="images\h1.png"  Width="23"  />
             </Button>
-            <Button Name="btnBTransact" Grid.Column="0" Grid.Row="5" Height="Auto" Background="{x:Null}"  Margin="1,0,0,0" Grid.ColumnSpan="2" BorderBrush="{x:Null}" Click="BtnBTransact_Click" >
+            <Button ToolTip="Borrow" Name="btnBTransact" Grid.Column="0" Grid.Row="5" Height="Auto" Background="{x:Null}"  Margin="1,0,0,0" Grid.ColumnSpan="2" BorderBrush="{x:Null}" Click="BtnBTransact_Click" >
                 <Image Source="images\transaction.png" Width="23" />
             </Button>
-            <Button Name="btnInventory" Grid.Column="0" Grid.Row="6" Height="Auto" Background="{x:Null}"  Margin="1,0,0,0" Grid.ColumnSpan="2" BorderBrush="{x:Null}" Click="BtnInventory_Click">
+            <Button ToolTip="Inventory" Name="btnInventory" Grid.Column="0" Grid.Row="6" Height="Auto" Background="{x:Null}"  Margin="1,0,0,0" Grid.ColumnSpan="2" BorderBrush="{x:Null}" Click="BtnInventory_Click">
                 <Image Source="images\stacked-files.png" Width="23" />
             </Button>
-            <Button Name="btnAccounts" Grid.Column="0" Grid.Row="8" Height="Auto" Background="{x:Null}" Margin="1,0,0,99" Grid.ColumnSpan="2" BorderBrush="{x:Null}" Click="BtnAccounts_Click" Grid.RowSpan="2">
+            <Button ToolTip="Users" Name="btnAccounts" Grid.Column="0" Grid.Row="8" Height="Auto" Background="{x:Null}" Margin="1,0,0,99" Grid.ColumnSpan="2" BorderBrush="{x:Null}" Click="BtnAccounts_Click" Grid.RowSpan="2">
                 <Image Source="images\avatar.png" Width="23" />
             </Button>
-            <Button Grid.Column="0" Grid.Row="10" Height="Auto" Background="{x:Null}" Margin="1,0,0,10" Grid.ColumnSpan="2" BorderBrush="{x:Null}" Grid.RowSpan="2">
+            <Button ToolTip="Logout" Grid.Column="0" Grid.Row="10" Height="Auto" Background="{x:Null}" Margin="1,0,0,10" Grid.ColumnSpan="2" BorderBrush="{x:Null}" Grid.RowSpan="2">
                 <Image Source="images/logout.png" Height="22" Width="23"   />
             </Button>
 
@@ -126,9 +128,11 @@
                 <local:Home/>
             </Border>
             <Image HorizontalAlignment="Left" Height="85" Grid.RowSpan="4" VerticalAlignment="Top" Width="60" Margin="1,15,0,0" Source="images/logofinal.png" Grid.ColumnSpan="2"/>
-            <Button x:Name="btnReports" Grid.Column="0" Grid.Row="7" Height="Auto" Background="{x:Null}" Margin="1,0,0,0" Grid.ColumnSpan="2" BorderBrush="{x:Null}" Click="btnReportsClick" >
+            <Button ToolTip="Reports" x:Name="btnReports" Grid.Column="0" Grid.Row="7" Height="Auto" Background="{x:Null}" Margin="1,0,0,0" Grid.ColumnSpan="2" BorderBrush="{x:Null}" Click="btnReportsClick" >
                 <Image Source="images/reportt.png" Width="28" Height="60" />
             </Button>
+
+           
         </Grid>
     </Border>
 </Window>

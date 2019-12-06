@@ -30,7 +30,7 @@
             <RowDefinition Height="20"/>
         </Grid.RowDefinitions>
 
-        <TextBlock Text="   INVENTORY" Grid.Column="2" Grid.Row="1" FontSize="20" FontFamily="Raleway Black" Margin="3,15,15,5" Foreground="#FF060606" Grid.RowSpan="2"/>
+        <TextBlock Text="   Inventory" Grid.Column="2" Grid.Row="1" FontSize="20" FontFamily="Raleway SemiBold" Margin="3,15,15,5" Foreground="#FF060606" Grid.RowSpan="2"/>
         <DataGrid Name="DtgInventory" BorderThickness="1.5" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="9" AutoGenerateColumns="False" BorderBrush="#892E2E2E" Background="#FFFAFAFA" FontFamily="Raleway SemiBold" FontSize="12">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="#"/>

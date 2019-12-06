@@ -157,6 +157,9 @@
     <Resource Include="Gelion-Medium.ttf" />
     <Resource Include="Gelion-Regular.ttf" />
     <Resource Include="images\logofinal.png" />
+    <Resource Include="images\reportt.png" />
+    <Resource Include="images\reporticon.png" />
+    <Resource Include="images\logo.png" />
     <Content Include="NLog.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
