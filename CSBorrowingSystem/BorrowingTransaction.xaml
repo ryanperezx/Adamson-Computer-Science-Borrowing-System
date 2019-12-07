@@ -42,9 +42,17 @@
         </Grid.RowDefinitions>
         <Image Source="images/repair.png" Grid.Column="1" Grid.Row="1"/>
         <TextBlock Text="  Borrow Equipment" Grid.Column="2" Grid.Row="1" FontFamily="Raleway SemiBold" FontSize="20" Margin="0,10,0,0" Foreground="Black" Grid.ColumnSpan="4"/>
+
         <DataGrid Name="DtgEquipment" Grid.Row="3" Grid.Column="1" Grid.RowSpan="13" BorderBrush="#FF535353" Grid.ColumnSpan="5" FontFamily="Raleway SemiBold" FontSize="12" BorderThickness="1">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="ITEM NAME" Foreground="#FF3A3A3A"></DataGridTextColumn>
+
+        <DataGrid Name="DtgEquipment" Grid.Row="3" Grid.Column="1" Grid.RowSpan="13" BorderBrush="#FF535353" Grid.ColumnSpan="5" FontFamily="Raleway SemiBold" FontSize="12" SelectionChanged="DtgEquipment_SelectionChanged">
+            <DataGrid.Columns>
+                <DataGridCheckBoxColumn Header="" Binding="{Binding CBox}" />
+                <DataGridTextColumn Header="ITEM CODE" Binding="{Binding Item}" />
+                <DataGridTextColumn Header="ITEM NAME"></DataGridTextColumn>
+
                 <DataGridTextColumn Header="ITEM TYPE"></DataGridTextColumn>
                 <DataGridTextColumn Header="QUANTITY"></DataGridTextColumn>
                 <DataGridTextColumn Header="BRAND"></DataGridTextColumn>
@@ -62,7 +70,12 @@
         <TextBox Name="txtProf" Grid.Column="8" Grid.Row="12"  BorderThickness="0,0,0,1" BorderBrush="#898D8D8D" FontFamily="Raleway SemiBold" FontSize="14" Margin="10,0,0,0" />
         <TextBlock Grid.Column="8" Grid.Row="13" Text="GROUP NUMBER" FontFamily="Raleway SemiBold" Margin="10,10,22,27" Foreground="Black" Grid.RowSpan="2" />
         <TextBox Name="txtGroupNo" Grid.Column="8" Grid.Row="14"  BorderThickness="0,0,0,1" BorderBrush="#898D8D8D" FontFamily="Raleway SemiBold" FontSize="14" Margin="10,0" />
+
         <Button Name="btnProceed" Content="PROCEED" Grid.Column="5" Grid.Row="17" Height="Auto" Background="#FF37A1F6" BorderBrush="{x:Null}" />
         <Button Name="btnCancel" Content="CANCEL" Grid.Column="3" Grid.Row="17" Height="Auto" Background="#FFFD5252" BorderBrush="{x:Null}" Margin="0,0.666,0,19.333" Grid.RowSpan="2" />
+
+        <Button Name="btnProceed" Content="PROCEED" Grid.Column="5" Grid.Row="17" Height="Auto" Background="#FF37A1F6" BorderBrush="{x:Null}" Click="btnProceed_Click" />
+        <Button Name="btnCancel" Content="CANCEL" Grid.Column="3" Grid.Row="17" Height="Auto" Background="#FFFD5252" BorderBrush="{x:Null}" />
+
     </Grid>
 </UserControl>
