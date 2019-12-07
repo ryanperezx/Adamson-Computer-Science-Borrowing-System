@@ -19,6 +19,7 @@ using System.Data.SqlClient;
 using System.Configuration;
 using System.Data;
 
+
 namespace CSBorrowingSystem
 {
     /// <summary>
@@ -28,8 +29,6 @@ namespace CSBorrowingSystem
     {
         public BorrowingTransaction()
         {
-
-            
             InitializeComponent();
             FillDataGrid();
         }
@@ -41,9 +40,6 @@ namespace CSBorrowingSystem
             //insert 
 
             List<checkedBoxIte> item = new List<checkedBoxIte>();
-
-      
-      
 
                             using (SqlCeCommand cmd1 = new SqlCeCommand("INSERT INTO Borrow(TransactID, FullName, StudentID, Professor, GroupNumber, ItemCode, DateBorrowed, SubjectName, Semester, ReleasedBy, SY, QtyBorrowed) VALUES(@TransactID, @FullName, @StudentID, @Professor, @GroupNumber, @ItemCode, @DateBorrowed, @SubjectName, @Semester, @ReleasedBy, @SY, @QtyBorrowed)", conn))
                             {
