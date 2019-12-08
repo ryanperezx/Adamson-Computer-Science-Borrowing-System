@@ -85,7 +85,7 @@ namespace CSBorrowingSystem
                 }
 
                 int i = 0;
-                using (SqlCeCommand cmd1 = new SqlCeCommand("SELECT * FROM User Where UserLevel = 'Administrator'", conn))
+                using (SqlCeCommand cmd1 = new SqlCeCommand("SELECT * FROM tbl_User Where UserLevel = 'Administrator'", conn))
                 {
                     using (DbDataReader reader = cmd1.ExecuteResultSet(ResultSetOptions.Scrollable))
                     {
