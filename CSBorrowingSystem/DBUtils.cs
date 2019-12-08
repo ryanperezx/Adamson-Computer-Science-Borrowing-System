@@ -12,7 +12,11 @@ namespace CSBorrowingSystem
         public static SqlCeConnection GetDBConnection()
         {
             string user = Environment.UserName;
+
             string datasource = @"C:\Users\" + user + @"\Documents\GitHub\Adamson-Computer-Science-Borrowing-System\CSBorrowingSystem\bin\Debug\borrowingDB.sdf";
+
+            string datasource = @"C:\Users\" + user + @"\source\repos\Adamson-Computer-Science-Borrowing-System\CSBorrowingSystem\bin\Debug\borrowingDB.sdf";
+
             return DBSQLServerUtils.GetDBConnection(datasource);
         }
     }

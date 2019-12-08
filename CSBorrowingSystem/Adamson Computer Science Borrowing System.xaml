@@ -4,8 +4,6 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CSBorrowingSystem"
-        
-
         mc:Ignorable="d"
         Title="Adamson_Computer_Science_Borrowing_System" Height="600" Width="1100" WindowStyle="None" WindowStartupLocation="CenterScreen" AllowsTransparency="True" Background="Transparent" WindowState="Normal" >
     <Border BorderBrush="Gray" BorderThickness="0.5" CornerRadius="20" Background="#FF00A8FF" >
