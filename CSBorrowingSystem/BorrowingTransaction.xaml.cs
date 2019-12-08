@@ -35,14 +35,14 @@ namespace CSBorrowingSystem
 
         private void btnProceed_Click(object sender, RoutedEventArgs e)
         {
-             SqlCeConnection conn = DBUtils.GetDBConnection();
+            SqlCeConnection conn = DBUtils.GetDBConnection();
             conn.Open();
             //insert 
 
             List<checkedBoxIte> item = new List<checkedBoxIte>();
 
-                            using (SqlCeCommand cmd1 = new SqlCeCommand("INSERT INTO Borrow(TransactID, FullName, StudentID, Professor, GroupNumber, ItemCode, DateBorrowed, SubjectName, Semester, ReleasedBy, SY, QtyBorrowed) VALUES(@TransactID, @FullName, @StudentID, @Professor, @GroupNumber, @ItemCode, @DateBorrowed, @SubjectName, @Semester, @ReleasedBy, @SY, @QtyBorrowed)", conn))
-                            {
+                using (SqlCeCommand cmd1 = new SqlCeCommand("INSERT INTO Borrow(TransactID, FullName, StudentID, Professor, GroupNumber, ItemCode, DateBorrowed, SubjectName, Semester, ReleasedBy, SY, QtyBorrowed) VALUES(@TransactID, @FullName, @StudentID, @Professor, @GroupNumber, @ItemCode, @DateBorrowed, @SubjectName, @Semester, @ReleasedBy, @SY, @QtyBorrowed)", conn))
+                {
 
                 for (int i = 0; i < 5; i++)
                 {

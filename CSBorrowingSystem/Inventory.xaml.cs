@@ -15,7 +15,7 @@ using System.Windows.Shapes;
 
 namespace CSBorrowingSystem
 {
-    /// <summary>
+    /// <summary>s
     /// Interaction logic for Inventory.xaml
     /// </summary>
     public partial class Inventory : UserControl
