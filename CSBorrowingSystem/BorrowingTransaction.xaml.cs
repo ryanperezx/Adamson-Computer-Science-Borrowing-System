@@ -88,7 +88,7 @@ namespace CSBorrowingSystem
         {
             
 
-            string ConString = ConfigurationManager.ConnectionStrings["ConString"].ConnectionString;
+           /* string ConString = ConfigurationManager.ConnectionStrings["ConString"].ConnectionString;
             string CmdString = string.Empty;
             using (SqlConnection con = new SqlConnection(ConString))
             
@@ -100,6 +100,7 @@ namespace CSBorrowingSystem
                 sda.Fill(dt);
                 DtgEquipment.ItemsSource = dt.DefaultView;
             }
+            */
         }
 
         public class checkedBoxIte    //Datagrid checkbox

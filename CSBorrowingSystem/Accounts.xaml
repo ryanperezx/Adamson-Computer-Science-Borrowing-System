@@ -40,16 +40,15 @@
         <TextBlock Grid.Column="3"  Grid.Row="3" Text="Computer Science Department" VerticalAlignment="Bottom" Height="15" FontFamily="Raleway SemiBold" Foreground="#FF464646" Margin="10,0,19.8,46" Grid.ColumnSpan="2"/>
         <Button Name="addSA" Content="Add Student Assistant" Grid.Column="1" Grid.Row="5"  Grid.ColumnSpan="4" Click="AddSA_Click" Height="Auto" Background="#FF00B8C1" BorderBrush="{x:Null}" Margin="0,0,19.8,0"/>
 
-        <local:AddSA BorderBrush="Gray" BorderThickness="1" x:Name="AddSAForm" Visibility="Hidden" Grid.Column="6" HorizontalAlignment="Left" Height="424" Grid.RowSpan="4" VerticalAlignment="Top" Width="348" Margin="0.4,38.8,-2,0" Grid.Row="1" Grid.ColumnSpan="2"/>
-
         <ScrollViewer HorizontalAlignment="Left" Background="Green" Height="469" Margin="0.2,9.8,0,0" VerticalAlignment="Top" Width="347" VerticalScrollBarVisibility="Auto" Grid.Column="5" Grid.ColumnSpan="2" Grid.Row="2" Grid.RowSpan="3">
             <StackPanel x:Name="StudASP" Background="White"/>
         </ScrollViewer>
         <ScrollViewer HorizontalAlignment="Left" Background="Green" Height="469" Margin="0.2,9.8,0,0" VerticalAlignment="Top" Width="347" VerticalScrollBarVisibility="Auto" Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="2" Grid.RowSpan="3">
             <StackPanel x:Name="AdminSP" Background="White"/>
         </ScrollViewer>
+        <local:AddSA BorderBrush="Gray" BorderThickness="1" x:Name="AddSAForm" Visibility="Hidden" Grid.Column="5" Height="600" Grid.RowSpan="7" VerticalAlignment="Top" Margin="-0.001,0,-4.796,0" Grid.ColumnSpan="3"/>
 
-        
+
 
 
     </Grid>
