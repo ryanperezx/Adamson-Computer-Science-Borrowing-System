@@ -46,12 +46,11 @@
 
         <DataGrid Name="DtgEquipment" Grid.Row="3" Grid.Column="1" Grid.RowSpan="12" BorderBrush="#FF535353" Grid.ColumnSpan="5" FontFamily="Raleway SemiBold" FontSize="12" SelectionChanged="DtgEquipment_SelectionChanged" BorderThickness="1.5">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="ITEM NAME" Foreground="#FF3A3A3A"></DataGridTextColumn>
                 <DataGridCheckBoxColumn Header="" Binding="{Binding CBox}" />
                 <DataGridTextColumn Header="ITEM CODE" Binding="{Binding Item}" />
                 <DataGridTextColumn Header="ITEM NAME"></DataGridTextColumn>
-                <DataGridTextColumn Header="ITEM TYPE"></DataGridTextColumn>
-                <DataGridTextColumn Header="QUANTITY"></DataGridTextColumn>
+                <DataGridTextColumn Header="TYPE"></DataGridTextColumn>
+                <DataGridComboBoxColumn Header="QUANTITY" ></DataGridComboBoxColumn>
                 <DataGridTextColumn Header="BRAND"></DataGridTextColumn>
             </DataGrid.Columns>
         </DataGrid>
