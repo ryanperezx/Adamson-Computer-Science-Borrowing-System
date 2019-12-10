@@ -27,11 +27,10 @@
                 <RowDefinition Height="70"/>
                 <RowDefinition Height="70"/>
                 <RowDefinition Height="70"/>
-
                 <RowDefinition Height="70"/>
-                <RowDefinition Height="115*"/>
-                <RowDefinition Height="21"/>
-                <RowDefinition Height="29"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="70"/>
+
             </Grid.RowDefinitions>
             <Border BorderBrush="#FFB9B9B9" BorderThickness="0" CornerRadius="20" Background="White" Grid.Column="2" Grid.RowSpan="12" Grid.ColumnSpan="4" >
                 <TextBlock  Text="   Adamson Computer Science Department Equipment Management System" Margin="0,10,0,0" FontFamily="/CSBorrowingSystem;component/#Gelion Medium" FontSize="22"/>
@@ -66,7 +65,7 @@
             <Button ToolTip="Inventory" Name="btnInventory" Grid.Column="0" Grid.Row="6" Height="Auto" Background="{x:Null}"  Margin="1,0,0,0" Grid.ColumnSpan="2" BorderBrush="{x:Null}" Click="BtnInventory_Click">
                 <Image Source="images\stacked-files.png" Width="23" />
             </Button>
-            <Button ToolTip="Users" Name="btnAccounts" Grid.Column="0" Grid.Row="8" Height="Auto" Background="{x:Null}" Margin="1,0,0,99" Grid.ColumnSpan="2" BorderBrush="{x:Null}" Click="BtnAccounts_Click" Grid.RowSpan="2">
+            <Button ToolTip="Users" Name="btnAccounts" Grid.Column="0" Grid.Row="8" Height="Auto" Background="{x:Null}" Grid.ColumnSpan="2" BorderBrush="{x:Null}" Click="BtnAccounts_Click">
                 <Image Source="images\avatar.png" Width="23" />
             </Button>
             <Button ToolTip="Logout" Grid.Column="0" Grid.Row="10" Height="Auto" Background="{x:Null}" Margin="1,0,0,10" Grid.ColumnSpan="2" BorderBrush="{x:Null}" Grid.RowSpan="2">
