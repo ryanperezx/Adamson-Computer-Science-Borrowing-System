@@ -42,7 +42,7 @@ namespace CSBorrowingSystem
             // Open the Database Connection
             _Conn.Open();
 
-            SqlCeDataAdapter _Adapter = new SqlCeDataAdapter("Select * from Items", _Conn);
+            SqlCeDataAdapter _Adapter = new SqlCeDataAdapter("Select * from Tbl_Items", _Conn);
 
             DataSet _Bind = new DataSet();
             _Adapter.Fill(_Bind, "MyDataBinding");
@@ -62,7 +62,7 @@ namespace CSBorrowingSystem
 
             List<checkedBoxIte> item = new List<checkedBoxIte>();
 
-                using (SqlCeCommand cmd1 = new SqlCeCommand("INSERT INTO Borrow(TransactID, FullName, StudentID, Professor, GroupNumber, ItemCode, DateBorrowed, SubjectName, Semester, ReleasedBy, SY, QtyBorrowed) VALUES(@TransactID, @FullName, @StudentID, @Professor, @GroupNumber, @ItemCode, @DateBorrowed, @SubjectName, @Semester, @ReleasedBy, @SY, @QtyBorrowed)", conn))
+                using (SqlCeCommand cmd1 = new SqlCeCommand("INSERT INTO Tbl_Borrows(TransactID, FullName, StudentID, GroupNumber, ItemCode, DateBorrowed, SubjectName, Semester, ReleasedBy, SY, QtyBorrowed) VALUES(@TransactID, @FullName, @StudentID, @GroupNumber, @ItemCode, @DateBorrowed, @SubjectName, @Semester, @ReleasedBy, @SY, @QtyBorrowed)", conn))
                 {
 
                 for (int i = 0; i < 5; i++)

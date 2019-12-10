@@ -47,11 +47,7 @@
         <DataGrid Name="DtgEquipment" Grid.Row="3" Grid.Column="1" Grid.RowSpan="12" BorderBrush="#FF535353" Grid.ColumnSpan="5" FontFamily="Raleway SemiBold" FontSize="12" SelectionChanged="DtgEquipment_SelectionChanged" ItemsSource="{Binding Path=MyDataBinding}" BorderThickness="1.5">
             <DataGrid.Columns>
                 <DataGridCheckBoxColumn Header="" Binding="{Binding CBox}" />
-                <DataGridTextColumn Header="ITEM CODE" Binding="{Binding Item}" />
-                <DataGridTextColumn Header="ITEM NAME"></DataGridTextColumn>
-                <DataGridTextColumn Header="TYPE"></DataGridTextColumn>
-                <DataGridComboBoxColumn Header="QUANTITY" ></DataGridComboBoxColumn>
-                <DataGridTextColumn Header="BRAND"></DataGridTextColumn>
+                
             </DataGrid.Columns>
         </DataGrid>
 
@@ -63,12 +59,12 @@
         <TextBox Name="txtStudNo" Grid.Column="8" Grid.Row="8" BorderThickness="0,0,0,1" BorderBrush="#898D8D8D" FontFamily="Raleway SemiBold" FontSize="14" Margin="10,0" />
         <TextBlock Grid.Column="8" Grid.Row="9" Text="SUBJECT" FontFamily="Raleway SemiBold" Margin="10,10,22,0" Foreground="Black" />
         <TextBox Name="txtSubject" Grid.Column="8" Grid.Row="10" Margin="10,0,15,0" BorderThickness="0,0,0,1" BorderBrush="#898D8D8D" FontFamily="Raleway SemiBold" FontSize="14" />
-        <TextBlock Grid.Column="8" Grid.Row="11" Text="PROFESSOR" FontFamily="Raleway SemiBold" Margin="10,10,22,20" Foreground="Black" Grid.RowSpan="2" />
-        <TextBox Name="txtProf" Grid.Column="8" Grid.Row="12"  BorderThickness="0,0,0,1" BorderBrush="#898D8D8D" FontFamily="Raleway SemiBold" FontSize="14" Margin="10,0,0,0" />
-        <TextBlock Grid.Column="8" Grid.Row="13" Text="GROUP NUMBER" FontFamily="Raleway SemiBold" Margin="10,10,22,27" Foreground="Black" Grid.RowSpan="2" />
-        <TextBox Name="txtGroupNo" Grid.Column="8" Grid.Row="14"  BorderThickness="0,0,0,1" BorderBrush="#898D8D8D" FontFamily="Raleway SemiBold" FontSize="14" Margin="10,0" />
+        <TextBlock   Grid.Column="8" Grid.Row="11" Text="PROFESSOR" FontFamily="Raleway SemiBold" Margin="10,10,22,20" Foreground="Black" Grid.RowSpan="2" />
+        <TextBox  Name="txtProf" Grid.Column="8" Grid.Row="12"  BorderThickness="0,0,0,1" BorderBrush="#898D8D8D" FontFamily="Raleway SemiBold" FontSize="14" Margin="10,0,0,0" />
+        <TextBlock  Grid.Column="8" Grid.Row="13" Text="GROUP NUMBER" FontFamily="Raleway SemiBold" Margin="10,10,22,27" Foreground="Black" Grid.RowSpan="2" />
+        <TextBox  Name="txtGroupNo" Grid.Column="8" Grid.Row="14"  BorderThickness="0,0,0,1" BorderBrush="#898D8D8D" FontFamily="Raleway SemiBold" FontSize="14" Margin="10,0" />
 
-        <Button Name="btnProceed" Content="PROCEED" Grid.Column="5" Grid.Row="16" Height="Auto" Background="#FF37A1F6" BorderBrush="{x:Null}" />
+        <Button Name="btnProceed" Click="btnProceed_Click" Content="PROCEED" Grid.Column="5" Grid.Row="16" Height="Auto" Background="#FF37A1F6" BorderBrush="{x:Null}" />
         <Button Name="btnCancel" Content="CANCEL" Grid.Column="3" Grid.Row="16" Height="Auto" Background="#FFFD5252" BorderBrush="{x:Null}"  />
 
 
