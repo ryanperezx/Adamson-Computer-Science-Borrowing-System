@@ -86,11 +86,14 @@ namespace CSBorrowingSystem
 
         private void FillDataGrid()
         {
+            
+
             string ConString = ConfigurationManager.ConnectionStrings["ConString"].ConnectionString;
             string CmdString = string.Empty;
             using (SqlConnection con = new SqlConnection(ConString))
+            
             {
-                CmdString = "SELECT ItemCode, ItemName, ItemType, QuantityOnStock, Brand FROM Items";
+                CmdString = "SELECT ItemCode, ItemName, ItemType, QuantityOnStock, Brand FROM Tbl_Items";
                 SqlCommand cmd = new SqlCommand(CmdString, con);
                 SqlDataAdapter sda = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable("Employee");

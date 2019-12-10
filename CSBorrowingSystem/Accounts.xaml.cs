@@ -84,14 +84,16 @@ namespace CSBorrowingSystem
             }
 
 
-            int i = 0;
-            using (SqlCeCommand cmd1 = new SqlCeCommand("SELECT * FROM User Where UserLevel = 'Administrator'", conn))
+            // int i = 0;
+            // using (SqlCeCommand cmd1 = new SqlCeCommand("SELECT * FROM User Where UserLevel = 'Administrator'", conn))
+            using (SqlCeCommand cmd1 = new SqlCeCommand("SELECT * FROM tbl_User Where UserLevel = 'Administrator'", conn))
             {
-                using (DbDataReader reader = cmd1.ExecuteResultSet(ResultSetOptions.Scrollable))
+                
 
                 int i = 0;
-                using (SqlCeCommand cmd1 = new SqlCeCommand("SELECT * FROM tbl_User Where UserLevel = 'Administrator'", conn))
-
+                using (DbDataReader reader = cmd1.ExecuteResultSet(ResultSetOptions.Scrollable))
+                //using (SqlCeCommand cmd1 = new SqlCeCommand("SELECT * FROM tbl_User Where UserLevel = 'Administrator'", conn))
+                    
                 {
                     if (reader.HasRows)
                     {
