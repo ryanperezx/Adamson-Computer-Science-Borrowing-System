@@ -8,14 +8,12 @@
         Title="Adamson_Computer_Science_Borrowing_System" Height="600" Width="1100" WindowStyle="None" WindowStartupLocation="CenterScreen" AllowsTransparency="True" Background="Transparent" WindowState="Normal" >
     <Border BorderBrush="Gray" BorderThickness="0.5" CornerRadius="20" Background="#FF00A8FF" >
         <Grid>
-
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="60"/>
                 <ColumnDefinition Width="3"/>
                 <ColumnDefinition Width="682"/>
-                <ColumnDefinition Width="101"/>
-                <ColumnDefinition Width="15*"/>
-                <ColumnDefinition Width="26*"/>
+                <ColumnDefinition Width="91*"/>
+                <ColumnDefinition Width="3"/>
                 <ColumnDefinition Width="Auto"/>
 
 
@@ -30,25 +28,24 @@
                 <RowDefinition Height="70"/>
                 <RowDefinition Height="70"/>
 
-                <RowDefinition Height="54*"/>
+                <RowDefinition Height="70"/>
                 <RowDefinition Height="115*"/>
                 <RowDefinition Height="21"/>
                 <RowDefinition Height="29"/>
             </Grid.RowDefinitions>
-            <Border BorderBrush="#FFB9B9B9" BorderThickness="0" CornerRadius="20" Background="White" Grid.Column="2" Grid.RowSpan="12" Grid.ColumnSpan="5" >
+            <Border BorderBrush="#FFB9B9B9" BorderThickness="0" CornerRadius="20" Background="White" Grid.Column="2" Grid.RowSpan="12" Grid.ColumnSpan="4" >
                 <TextBlock  Text="   Adamson Computer Science Department Equipment Management System" Margin="0,10,0,0" FontFamily="/CSBorrowingSystem;component/#Gelion Medium" FontSize="22"/>
             </Border>
-            <Border BorderBrush="#FFB9B9B9" BorderThickness="0" CornerRadius="20" Background="#FFF5F7FA" Grid.Column="4" Grid.RowSpan="12" Grid.ColumnSpan="3" HorizontalAlignment="Right" Width="256"  >
+            <Border BorderBrush="#FFB9B9B9" BorderThickness="0" CornerRadius="20" Background="#FFF5F7FA" Grid.Column="4" Grid.RowSpan="12" Grid.ColumnSpan="2"  >
                 <DockPanel/>
             </Border>
-            <Border BorderBrush="#FFB9B9B9" BorderThickness="0" CornerRadius="20" Background="#FFD3E7FF" Grid.Column="4" Grid.RowSpan="5" Margin="0,0,3,0" Grid.Row="7" Grid.ColumnSpan="3" >
+            <Border BorderBrush="#FFB9B9B9" BorderThickness="0" CornerRadius="20" Background="#FFD3E7FF" Grid.Column="4" Grid.RowSpan="5" Margin="0,0,3,0" Grid.Row="7" Grid.ColumnSpan="2" >
                 <DockPanel/>
             </Border>
-            <DockPanel Grid.Column="4" Margin="0,60,3,12" Grid.Row="7" Background="#FFE8F1FE" Grid.RowSpan="2" Grid.ColumnSpan="3"/>
-            <TextBlock Grid.Row="7" Grid.Column="4"  Text="RECENT ACTIVITY"  FontFamily="/CSBorrowingSystem;component/#Gelion Regular" FontSize="18" Margin="0,24,7,26" TextAlignment="Center" Foreground="Black" FontStyle="Italic" TextDecorations="{x:Null}" Grid.ColumnSpan="3" />
+            <TextBlock Grid.Row="7" Grid.Column="4"  Text="RECENT ACTIVITY"  FontFamily="/CSBorrowingSystem;component/#Gelion Regular" FontSize="18" Margin="0,24,7,26" TextAlignment="Center" Foreground="Black" FontStyle="Italic" TextDecorations="{x:Null}" Grid.ColumnSpan="2" />
 
 
-            <Viewbox Grid.Column="4"   Grid.Row="1" Grid.RowSpan="6" Margin="0,0,0,0" Grid.ColumnSpan="3"    >
+            <Viewbox Grid.Column="5"   Grid.Row="1" Grid.RowSpan="6" Margin="0,0,0,0"    >
                 <Calendar Height="379" Width="277" Background="White">
                     <Calendar.BorderBrush>
                         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -76,17 +73,11 @@
                 <Image Source="images/logout.png" Height="22" Width="23"   />
             </Button>
 
-            <Button Grid.Column="6" Grid.Row="0" Height="Auto"   Margin="169,0,4,0" BorderBrush="{x:Null}" Background="{x:Null}" RenderTransformOrigin="0.5,0.5" Click="Button_Click_1" >
+            <Button Grid.Column="5" Grid.Row="0" Height="Auto"   Margin="169,0,4,0" BorderBrush="{x:Null}" Background="{x:Null}" RenderTransformOrigin="0.5,0.5" Click="Button_Click_1" >
                 <Image Source="images\deletee.png" Height="15"  />
             </Button>
-            <TextBlock Grid.Row="8" Grid.Column="6"  Text="UserName added Item."  FontFamily="/CSBorrowingSystem;component/#Gelion Regular" FontSize="14" Margin="17,6,7,24" Foreground="#FF363636" FontStyle="Italic" TextDecorations="{x:Null}" />
-            <Image Grid.Row="8" Grid.Column="5" Source="images/a.png" Margin="0,0,0,20"  />
-            <TextBlock Grid.Row="9" Grid.Column="6"  FontFamily="/CSBorrowingSystem;component/#Gelion Regular" FontSize="14" Margin="17,10,7,79" Foreground="#FF363636" FontStyle="Italic" TextDecorations="{x:Null}" ><Run Text="UserName "/><Run Text="created account."/></TextBlock>
-            <Image Grid.Row="9" Grid.Column="5" Source="images/b.PNG" Margin="0,0,0,81"  />
-            <TextBlock Grid.Row="9" Grid.Column="6"  FontFamily="/CSBorrowingSystem;component/#Gelion Regular" FontSize="14" Margin="17,58,7,31" Foreground="#FF363636" FontStyle="Italic" TextDecorations="{x:Null}" ><Run Text="UserName "/><Run Text="created account."/></TextBlock>
-            <Image Grid.Row="9" Grid.Column="5" Source="images/c.PNG" Margin="0,50,0,31"  />
 
-            <Button Grid.Column="6" Grid.Row="0" Height="Auto"   Margin="121,0,47,0" BorderBrush="{x:Null}" Background="{x:Null}" RenderTransformOrigin="0.5,0.5" Click="Button_Click_2" >
+            <Button Grid.Column="5" Grid.Row="0" Height="Auto"   Margin="121,0,47,0" BorderBrush="{x:Null}" Background="{x:Null}" RenderTransformOrigin="0.5,0.5" Click="Button_Click_2" >
                 <Button.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform ScaleX="-1"/>
@@ -97,7 +88,7 @@
                 </Button.RenderTransform>
                 <Image Source="images/minimize.png" Height="18" RenderTransformOrigin="0.5,0.583"  />
             </Button>
-            <Button Grid.Column="6" Grid.Row="0" Height="Auto"   Margin="73,0,94,0" BorderBrush="{x:Null}" Background="{x:Null}" RenderTransformOrigin="0.5,0.5" Click="Button_Click_3" >
+            <Button Grid.Column="5" Grid.Row="0" Height="Auto"   Margin="73,0,94,0" BorderBrush="{x:Null}" Background="{x:Null}" RenderTransformOrigin="0.5,0.5" Click="Button_Click_3" >
                 <Button.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform ScaleX="-1"/>
@@ -130,7 +121,7 @@
                 <Image Source="images/reportt.png" Width="28" Height="60" />
             </Button>
 
-           
+
         </Grid>
     </Border>
 </Window>
