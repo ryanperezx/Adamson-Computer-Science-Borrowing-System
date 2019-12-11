@@ -30,7 +30,7 @@ namespace CSBorrowingSystem
         public BorrowingTransaction()
         {
             InitializeComponent();
-            BindGrid();
+            //BindGrid();
             
         }
 
@@ -62,7 +62,7 @@ namespace CSBorrowingSystem
 
             List<checkedBoxIte> item = new List<checkedBoxIte>();
 
-                using (SqlCeCommand cmd1 = new SqlCeCommand("INSERT INTO Tbl_Borrows(TransactID, FullName, StudentID, GroupNumber, ItemCode, DateBorrowed, SubjectName, Semester, ReleasedBy, SY, QtyBorrowed) VALUES(@TransactID, @FullName, @StudentID, @GroupNumber, @ItemCode, @DateBorrowed, @SubjectName, @Semester, @ReleasedBy, @SY, @QtyBorrowed)", conn))
+                using (SqlCeCommand cmd1 = new SqlCeCommand("INSERT INTO Tbl_Borrows(TransactID, FullName, StudentID, GroupNumber, ItemCode, DateBorrowed, SubjectName, Semester, ReleasedBy, SY, QtyBorrowed) VALUES (@TransactID, @FullName, @StudentID, @GroupNumber, @ItemCode, @DateBorrowed, @SubjectName, @Semester, @ReleasedBy, @SY, @QtyBorrowed)", conn))
                 {
 
                 for (int i = 0; i < 5; i++)

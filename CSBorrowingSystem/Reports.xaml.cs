@@ -26,7 +26,7 @@ namespace CSBorrowingSystem
         public Reports()
         {
             InitializeComponent();
-            BindGridItems();
+            //BindGridItems();
 
         }
 

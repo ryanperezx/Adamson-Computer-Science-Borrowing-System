@@ -22,14 +22,17 @@
         </Grid.RowDefinitions>
         <TextBlock Text="Add New Items" RenderTransformOrigin="2.05,2.6" Margin="0,20,268.5,0" Grid.Column="1" Grid.Row="1" FontFamily="Raleway SemiBold" FontSize="16"/>
         <TextBox
+            x:Name="txtItemCode"
           materialDesign:HintAssist.Hint="Item Code"
           Style="{StaticResource MaterialDesignFloatingHintTextBox}" Grid.Column="1" Margin="239,19.667,18.5,158" Grid.Row="2" FontFamily="Raleway SemiBold" />
         <TextBox
+            x:Name="txtItemName"
             materialDesign:HintAssist.Hint="Item Name"
             Style="{StaticResource MaterialDesignFloatingHintTextBox}" Grid.Column="1" Margin="0,77,257.5,103.333" Grid.Row="2" FontFamily="Raleway SemiBold" />
         <ComboBox
+            x:Name="cmbItemType"
   Style="{StaticResource MaterialDesignFloatingHintComboBox}"
-  materialDesign:HintAssist.Hint="Name of Report"
+  materialDesign:HintAssist.Hint="Item Type"
   IsEditable="True"
   materialDesign:HintAssist.HintOpacity=".26" Margin="0,143.667,257.5,51.333" Grid.Column="1" Grid.Row="2" Height="35" FontFamily="Raleway SemiBold">
             <ComboBoxItem>
@@ -40,18 +43,23 @@
             </ComboBoxItem>
         </ComboBox>
         <TextBox
+            x:Name="txtItemBrand"
             materialDesign:HintAssist.Hint="Item Brand"
             Style="{StaticResource MaterialDesignFloatingHintTextBox}" Grid.Column="1" Margin="0,19.667,257.5,158" Grid.Row="2" FontFamily="Raleway SemiBold" />
         <TextBox
+            x:Name="txtQty"
             materialDesign:HintAssist.Hint="Quantity"
             Style="{StaticResource MaterialDesignFloatingHintTextBox}" Grid.Column="1" Margin="239,77,18.5,103.333" Grid.Row="2" FontFamily="Raleway SemiBold" />
         <TextBox
+            x:Name="txtRemarks"
             materialDesign:HintAssist.Hint="Remarks"
             Style="{StaticResource MaterialDesignFloatingHintTextBox}" Grid.Column="1" Margin="239,131.667,18.5,51.333" Grid.Row="2" FontFamily="Raleway SemiBold" />
         <Button x:Name="close"  Click="Close_Click" Content="x" Margin="426.167,0,0,28" Grid.Column="1" Grid.RowSpan="2" FontFamily="Raleway SemiBold" FontSize="20" Grid.ColumnSpan="2" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF343434"/>
         <Button
         Style="{StaticResource MaterialDesignRaisedAccentButton}"
         Width="150"
+        x:Name="btnSubmit"
+            Click="btnSubmit_Click"
         ToolTip="Resource name: MaterialDesignRaisedAccentButton"
         materialDesign:RippleAssist.Feedback="#DD000000" Grid.Column="1" Margin="287,196.5,18.5,0" Grid.Row="2" Background="#FF3CE6E6" BorderBrush="#FF73ECFF" Height="Auto">
             SUBMIT

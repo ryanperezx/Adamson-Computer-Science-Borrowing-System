@@ -11,6 +11,9 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Data.Common;
+using System.Collections.ObjectModel;
+using System.Data.SqlServerCe;
 
 namespace CSBorrowingSystem
 {
@@ -27,6 +30,41 @@ namespace CSBorrowingSystem
         private void Close_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+
+        private void btnSubmit_Click(object sender, RoutedEventArgs e)
+        {
+            SqlCeConnection conn = DBUtils.GetDBConnection();
+            conn.Open();
+            using(SqlCeCommand cmd = new SqlCeCommand("INSERT into tbl_Items (ItemCode, ItemName, ItemType, QuantityOnStock, Brand, Remarks) VALUES (@itemCode, @itemName, @itemType, @qty, @itemBrand, @remarks)", conn))
+            {
+                cmd.Parameters.AddWithValue("@itemCode", txtItemCode.Text);
+                cmd.Parameters.AddWithValue("@itemBrand", txtItemBrand.Text);
+                cmd.Parameters.AddWithValue("@itemType", cmbItemType.Text);
+                cmd.Parameters.AddWithValue("@itemName", txtItemName.Text);
+                cmd.Parameters.AddWithValue("@qty", txtQty.Text);
+                cmd.Parameters.AddWithValue("@remarks", txtRemarks.Text);
+                try
+                {
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Item added successfully");
+                    emptyFields();
+                }
+                catch(SqlCeException ex)
+                {
+                    MessageBox.Show("Error! Log has been updated with the error." + ex);
+                    return;
+                }
+            }
+        }
+
+        private void emptyFields()
+        {
+            txtItemBrand.Text = null;
+            txtItemCode.Text = null;
+            txtItemName.Text = null;
+            txtQty.Text = null;
+            txtRemarks.Text = null;
         }
     }
 }

@@ -67,13 +67,14 @@ namespace CSBorrowingSystem
                                 }
                             }
                             MessageBox.Show("Item(s) has been deleted!");
-                            LoadCollectionData();
                         }
                         else
                         {
                             MessageBox.Show("There are no data to be returned!");
                         }
                     }
+                    LoadCollectionData();
+
                     break;
                 case MessageBoxResult.No:
                     break;
@@ -127,6 +128,11 @@ namespace CSBorrowingSystem
         {
             var addItem = new AddItem();
             addItem.Show();
+        }
+
+        private void btnRefresh_Click(object sender, RoutedEventArgs e)
+        {
+            LoadCollectionData();
         }
     }
 }

@@ -31,19 +31,22 @@
         </Grid.RowDefinitions>
 
         <TextBlock Text="   Inventory" Grid.Column="2" Grid.Row="1" FontSize="20" FontFamily="Raleway SemiBold" Margin="3,15,15,5" Foreground="#FF060606" Grid.RowSpan="2"/>
-        <DataGrid Name="DtgInventory" BorderThickness="1.5" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="9" AutoGenerateColumns="False" BorderBrush="#892E2E2E" Background="#FFFAFAFA" FontFamily="Raleway SemiBold" FontSize="12" ItemsSource="{Binding}">
+        <DataGrid Name="DtgInventory" BorderThickness="1.5" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="9" AutoGenerateColumns="False" BorderBrush="#892E2E2E" CanUserAddRows="False" Background="#FFFAFAFA" FontFamily="Raleway SemiBold" FontSize="12" ItemsSource="{Binding}">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="#"/>
-                <DataGridTextColumn Header="ITEM ID"  Binding="{Binding itemCode}"/>
-                <DataGridTextColumn Header="ITEM NAME" Width="150" Binding="{Binding itemName}" />
-                <DataGridTextColumn Header="ITEM TYPE" Binding="{Binding itemType}" />
-                <DataGridTextColumn Header="ITEM BRAND" Binding="{Binding brand}" />
-                <DataGridTextColumn Header="QTY" Binding="{Binding qty}" />
-                <DataGridTextColumn Header="REMARKS" Binding="{Binding remarks}" />
+                <DataGridTextColumn Header="#" IsReadOnly="True"/>
+                <DataGridTextColumn Header="ITEM ID"  Binding="{Binding itemCode}" IsReadOnly="True"/>
+                <DataGridTextColumn Header="ITEM NAME" Width="150" Binding="{Binding itemName}" IsReadOnly="True"/>
+                <DataGridTextColumn Header="ITEM TYPE" Binding="{Binding itemType}" IsReadOnly="True"/>
+                <DataGridTextColumn Header="ITEM BRAND" Binding="{Binding brand}" IsReadOnly="True" />
+                <DataGridTextColumn Header="QTY" Binding="{Binding qty}" IsReadOnly="True" />
+                <DataGridTextColumn Header="REMARKS" Binding="{Binding remarks}" IsReadOnly="True" />
                 <DataGridCheckBoxColumn Header="SELECT"  Binding="{Binding isReturned}"/>
 
             </DataGrid.Columns>
         </DataGrid>
+        <Button x:Name="btnRefresh" Cursor="Hand" Click="btnRefresh_Click" Margin="0,4,26,5" Grid.Column="3" Grid.Row="1" Grid.ColumnSpan="2">
+            Refresh
+        </Button>
         <Button Name="btnSave" Click="btnSave_Click" Grid.Column="9" Grid.Row="1" Height="Auto" FontFamily="Raleway SemiBold" Background="#FFFFF300" BorderBrush="{x:Null}">
             <Image Source="images\tick.png" Width="17"/>
         </Button>
