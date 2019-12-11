@@ -79,6 +79,7 @@
     <Compile Include="AddSA.xaml.cs">
       <DependentUpon>AddSA.xaml</DependentUpon>
     </Compile>
+    <Compile Include="itemCollection1.cs" />
     <Compile Include="Reports.xaml.cs" />
     <Page Include="Accounts.xaml">
       <SubType>Designer</SubType>

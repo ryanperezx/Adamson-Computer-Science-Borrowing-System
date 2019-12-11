@@ -27,91 +27,104 @@ namespace CSBorrowingSystem
     /// </summary>
     public partial class BorrowingTransaction : UserControl
     {
+        ObservableCollection<itemCollection1> list = new ObservableCollection<itemCollection1>();
         public BorrowingTransaction()
         {
+
             InitializeComponent();
-            //BindGrid();
+            DtgEquipment.ItemsSource = list;
+            LoadCollectionData();
             
+
         }
 
-        public void BindGrid() //fill data grid
+        private ObservableCollection<itemCollection1> LoadCollectionData()
         {
-            string _ConnectionString = ConfigurationManager.ConnectionStrings["ConnectionString1"].ConnectionString;
-            SqlCeConnection _Conn = new SqlCeConnection(_ConnectionString);
+            SqlCeConnection conn = DBUtils.GetDBConnection();
+            conn.Open();
+            list.Clear();
+            using (SqlCeCommand cmd = new SqlCeCommand("SELECT it.itemName, it.QuantityOnStock, it.brand, b.qtyBorrowed, b.itemCode, b.subjectName from tbl_Borrow b INNER JOIN tbl_Items it on it.itemCode = b.itemCode", conn))
+            {
+                using (DbDataReader reader = cmd.ExecuteResultSet(ResultSetOptions.Scrollable))
+                {
+                    if (reader.HasRows)
+                    {
+                        while (reader.Read())
+                        {
+                            string itemName = reader["itemName"].ToString();
+                            string brand = reader["brand"].ToString();
+                            string QuantityOnStock = reader["QuantityOnStock"].ToString();
+                            string subject = reader["subjectName"].ToString();
+                            string itemCode = reader["itemCode"].ToString();
+                            int qtyBorrowed = Convert.ToInt32(reader["qtyBorrowed"]);
 
-            // Open the Database Connection
-            _Conn.Open();
 
-            SqlCeDataAdapter _Adapter = new SqlCeDataAdapter("Select * from Tbl_Items", _Conn);
+                            list.Add(new itemCollection1
+                            {
+                                itemName = itemName,
+                                brand = brand,
+                                itemCode = itemCode,
+                                qty = qtyBorrowed,
+                                QuantityOnStock = QuantityOnStock,
+                                subject = subject
+                            });
 
-            DataSet _Bind = new DataSet();
-            _Adapter.Fill(_Bind, "MyDataBinding");
-
-            DtgEquipment.DataContext = _Bind;
-
-            // Close the Database Connection
-            _Conn.Close();
-
+                        }
+                    }
+                }
+            }
+            return list;
         }
+
 
         private void btnProceed_Click(object sender, RoutedEventArgs e)
         {
             SqlCeConnection conn = DBUtils.GetDBConnection();
             conn.Open();
-            //insert 
 
-            List<checkedBoxIte> item = new List<checkedBoxIte>();
+            using (SqlCeCommand cmd1 = new SqlCeCommand("INSERT INTO tbl_Borrow(transactID, FullName, studentID, Professor, GroupNumber, itemCode, DateBorrowed, subjectName, semester, releasedBy, sy, qtyBorrowed) VALUES(@transactID, @FullName, @studentID, @Professor, @GroupNumber, @itemCode, @DateBorrowed, @subjectName, @semester, @releasedBy, @sy, @qtyBorrowed)", conn))
+            {
 
-                using (SqlCeCommand cmd1 = new SqlCeCommand("INSERT INTO Tbl_Borrows(TransactID, FullName, StudentID, GroupNumber, ItemCode, DateBorrowed, SubjectName, Semester, ReleasedBy, SY, QtyBorrowed) VALUES (@TransactID, @FullName, @StudentID, @GroupNumber, @ItemCode, @DateBorrowed, @SubjectName, @Semester, @ReleasedBy, @SY, @QtyBorrowed)", conn))
+                //get values and insert to query string
+                cmd1.Parameters.Clear();
+                cmd1.Parameters.AddWithValue("@transactID", "00"); //get number after two zeros and add 1
+                cmd1.Parameters.AddWithValue("@FullName", txtFullName.Text);
+                cmd1.Parameters.AddWithValue("@studentID", txtStudNo.Text);
+                cmd1.Parameters.AddWithValue("@subjectName", txtSubject.Text);
+                cmd1.Parameters.AddWithValue("@Professor", txtProf.Text);
+                cmd1.Parameters.AddWithValue("@GroupNumber", txtGroupNo.Text);
+                cmd1.Parameters.AddWithValue("@DateBorrowed", DateTime.Now.Date.ToString("MM/dd/yyyy"));
+                cmd1.Parameters.AddWithValue("@semester", "n/a"); //not in UI
+                cmd1.Parameters.AddWithValue("@releasedBy", "n/a"); //not in UI
+                cmd1.Parameters.AddWithValue("@sy", "n/a"); //not in UI
+                cmd1.Parameters.AddWithValue("@qtyBorrowed", "0"); //get from data grid
+                cmd1.Parameters.AddWithValue("@itemCode", "0"); //get from data grid
+
+
+                try
                 {
+                    cmd1.ExecuteNonQuery();
+                    string sMessageBoxText = "Borrowed Successfully!";
+                    string sCaption = "Notification";
+                    MessageBoxButton btnMessageBox = MessageBoxButton.OK;
+                    MessageBoxImage icnMessageBox = MessageBoxImage.Information;
 
-                for (int i = 0; i < 5; i++)
-                {
-                    checkedBoxIte ite = new checkedBoxIte();
-                    ite.Itm = i.ToString();
-                    item.Add(ite);
+                    MessageBox.Show(sMessageBoxText, sCaption, btnMessageBox, icnMessageBox);
+
                 }
-                DtgEquipment.ItemsSource = item;
-                                //get values and insert to query string
-                                cmd1.Parameters.Clear();
-                                cmd1.Parameters.AddWithValue("@TransactID", "TRNS00"); 
-                                cmd1.Parameters.AddWithValue("@FullName", txtFullName.Text); 
-                                cmd1.Parameters.AddWithValue("@StudentID", txtStudNo.Text);
-                                cmd1.Parameters.AddWithValue("@SubjectName", txtSubject.Text);
-                                cmd1.Parameters.AddWithValue("@Professor", txtProf.Text);     //not in the Borrow DB
-                                cmd1.Parameters.AddWithValue("@GroupNumber", txtGroupNo.Text);   // not in the Borrow DB
-                                cmd1.Parameters.AddWithValue("@ItemCode", item); 
-                                cmd1.Parameters.AddWithValue("@DateBorrowed", DateTime.Now.Date.ToString("MM/dd/yyyy"));  //insert date
-                                
-                       
-                            try
-                                {
-                                    cmd1.ExecuteNonQuery();
-                                    string sMessageBoxText = "Borrowed Successfully!";
-                                    string sCaption = "Notification";
-                                    MessageBoxButton btnMessageBox = MessageBoxButton.OK;
-                                    MessageBoxImage icnMessageBox = MessageBoxImage.Information;
-
-                                    MessageBox.Show(sMessageBoxText, sCaption, btnMessageBox, icnMessageBox);
-
-                                }
-                                catch (SqlCeException ex)
-                                {
-                                    MessageBox.Show("Error! Log has been updated with the error.");
-                                    return;
-                                }
-                            }
+                catch (SqlCeException ex)
+                {
+                    MessageBox.Show("Error! Log has been updated with the error.");
+                    return;
+                }
+            }
 
             conn.Close();
+
         }
 
 
-        public class checkedBoxIte    //Datagrid checkbox
-        {
-            
-            public bool CBox { get; set; }
-            public string Itm { get; set; }
-        }
+
         private void DtgEquipment_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
