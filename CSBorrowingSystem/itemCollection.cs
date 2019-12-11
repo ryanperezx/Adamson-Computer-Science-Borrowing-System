@@ -26,6 +26,17 @@ namespace CSBorrowingSystem
             get;
             set;
         }
+        public string itemType
+        {
+            get;
+            set;
+        }
+        public string itemID
+        {
+            get;
+            set;
+       
+        }
         public string transactNo
         {
             get;
