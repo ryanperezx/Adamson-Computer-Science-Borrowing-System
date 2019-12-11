@@ -85,5 +85,12 @@ namespace CSBorrowingSystem
             }
             return list;
         }
+
+        private void BtnAdd_Click(object sender, RoutedEventArgs e)
+        {
+            var addItem = new AddItem();
+            addItem.Show();
+           
+        }
     }
 }
