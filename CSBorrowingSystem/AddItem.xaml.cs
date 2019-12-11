@@ -10,31 +10,23 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace CSBorrowingSystem
 {
-    /// <summary>s
-    /// Interaction logic for Inventory.xaml
+    /// <summary>
+    /// Interaction logic for AddItem.xaml
     /// </summary>
-    public partial class Inventory : UserControl
+    public partial class AddItem : Window
     {
-        public Inventory()
+        public AddItem()
         {
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Close_Click(object sender, RoutedEventArgs e)
         {
-
-        }
-
-        private void BtnAdd_Click(object sender, RoutedEventArgs e)
-        {
-            var addItem = new AddItem();
-            addItem.Show();
-           
+            this.Close();
         }
     }
 }

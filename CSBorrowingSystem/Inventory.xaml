@@ -25,8 +25,10 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="6"/>
             <RowDefinition Height="41"/>
-            <RowDefinition Height="10*"/>
-            <RowDefinition Height="423*"/>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="45*"/>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="20"/>
             <RowDefinition Height="20"/>
         </Grid.RowDefinitions>
 
@@ -50,9 +52,10 @@
         <Button Name="btnDel" Grid.Column="7" Grid.Row="1" Height="Auto" Click="Button_Click" FontFamily="Raleway SemiBold" Background="#FFFF2E2E" BorderBrush="{x:Null}">
             <Image Source="images\trash.png" Width="17"/>
         </Button>
-        <Button Name="btnAdd" Grid.Column="5" Grid.Row="1"  Height="Auto" FontFamily="Raleway SemiBold" Background="#FF0A8CB2" BorderBrush="{x:Null}" Margin="1,0,0,0">
+        <Button x:Name="btnAdd" Click="BtnAdd_Click"  Grid.Column="5" Grid.Row="1"  Height="Auto" FontFamily="Raleway SemiBold" Background="#FF0A8CB2" BorderBrush="{x:Null}" Margin="1,0,0,0">
             <Image Source="images\plus.png"/>
         </Button>
         <Image Source="images\sticky-note.png"  Grid.Row="1" Grid.Column="1" Margin="0,10,2,0"/>
+        <TextBlock Text="Total Number of Items: 0 " Grid.Column="1" Grid.Row="5" Grid.ColumnSpan="2" Margin="0,0,246,0" FontSize="14" FontFamily="Raleway SemiBold"></TextBlock>
     </Grid>
 </UserControl>
