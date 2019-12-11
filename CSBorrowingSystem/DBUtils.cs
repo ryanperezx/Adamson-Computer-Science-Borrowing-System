@@ -15,7 +15,7 @@ namespace CSBorrowingSystem
 
            // string datasource = @"C:\Users\" + user + @"\Documents\GitHub\Adamson-Computer-Science-Borrowing-System\CSBorrowingSystem\bin\Debug\borrowingDB.sdf";
 
-           string datasource = @"C:\Users\arvin\Desktop\PM\db\borrowingDB.sdf";
+           string datasource = @"C:\Users\" + user + @"\Documents\GitHub\Adamson-Computer-Science-Borrowing-System\CSBorrowingSystem\bin\Debug\borrowingDB.sdf";
 
             return DBSQLServerUtils.GetDBConnection(datasource);
         }
