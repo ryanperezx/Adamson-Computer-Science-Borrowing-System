@@ -5,8 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CSBorrowingSystem"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-        
-                
+       
         mc:Ignorable="d"
         Title="AddItem" Height="318" Width="513.5" WindowStyle="None" WindowStartupLocation="CenterScreen">
     <Grid>
@@ -28,10 +27,11 @@
         <TextBox
             materialDesign:HintAssist.Hint="Item Name"
             Style="{StaticResource MaterialDesignFloatingHintTextBox}" Grid.Column="1" Margin="0,77,257.5,103.333" Grid.Row="2" FontFamily="Raleway SemiBold" />
-        <ComboBox BorderThickness="0,0,0,3"
+        <ComboBox
   Style="{StaticResource MaterialDesignFloatingHintComboBox}"
-  materialDesign:HintAssist.Hint="Item Type"
-  materialDesign:HintAssist.HintOpacity=".26" Grid.Column="1" Margin="0,131.667,257.5,51.333" Grid.Row="2" Height="47" IsEditable="True" FontFamily="Raleway SemiBold" BorderBrush="#89000000">
+  materialDesign:HintAssist.Hint="Name of Report"
+  IsEditable="True"
+  materialDesign:HintAssist.HintOpacity=".26" Margin="0,143.667,257.5,51.333" Grid.Column="1" Grid.Row="2" Height="35" FontFamily="Raleway SemiBold">
             <ComboBoxItem>
                 Equipment
             </ComboBoxItem>
