@@ -33,14 +33,51 @@ namespace CSBorrowingSystem
         }
 
 
-        private void btnAdd_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
 
         private void btnDel_Click(object sender, RoutedEventArgs e)
         {
+            string sMessageBoxText = "Are all rows accounted for?";
+            string sCaption = "Delete Item(s)";
+            MessageBoxButton btnMessageBox = MessageBoxButton.YesNoCancel;
+            MessageBoxImage icnMessageBox = MessageBoxImage.Warning;
 
+            MessageBoxResult dr = MessageBox.Show(sMessageBoxText, sCaption, btnMessageBox, icnMessageBox);
+
+            switch (dr)
+            {
+                case MessageBoxResult.Yes:
+                    foreach (var row in list)
+                    {
+                        var check = list.FirstOrDefault(x => (x.isReturned == true));
+                        if (check != null)
+                        {
+                            SqlCeConnection conn = DBUtils.GetDBConnection();
+                            conn.Open();
+                            using (SqlCeCommand cmd2 = new SqlCeCommand("DELETE from tbl_Items where itemCode = @itemCode", conn))
+                            {
+                                cmd2.Parameters.AddWithValue("@itemCode", row.itemCode);
+                                try
+                                {
+                                    cmd2.ExecuteNonQuery();
+                                }
+                                catch (SqlCeException ex)
+                                {
+                                    MessageBox.Show("Error! Log has been updated with the error." + ex);
+                                    return;
+                                }
+                            }
+                            MessageBox.Show("Item(s) has been deleted!");
+                            LoadCollectionData();
+                        }
+                        else
+                        {
+                            MessageBox.Show("There are no data to be returned!");
+                        }
+                    }
+                    break;
+                case MessageBoxResult.No:
+                    break;
+            }
         }
 
         private void btnSave_Click(object sender, RoutedEventArgs e)
@@ -53,7 +90,7 @@ namespace CSBorrowingSystem
             SqlCeConnection conn = DBUtils.GetDBConnection();
             conn.Open();
             list.Clear();
-            using (SqlCeCommand cmd = new SqlCeCommand("SELECT it.itemID, it.itemName, it.itemType, it.brand, b.qtyBorrowed, b.itemCode, b.transactID, b.dateBorrowed, b.subjectName from tbl_Borrow b INNER JOIN tbl_Student s on s.studentID = b.studentID INNER JOIN tbl_Items it on it.itemCode = b.itemCode", conn))
+            using (SqlCeCommand cmd = new SqlCeCommand("SELECT itemCode, itemName, itemType, brand, remarks, quantityOnStock from tbl_Items", conn))
             {
                 using (DbDataReader reader = cmd.ExecuteResultSet(ResultSetOptions.Scrollable))
                 {
@@ -61,21 +98,21 @@ namespace CSBorrowingSystem
                     {
                         while (reader.Read())
                         {
-                            string itemID = reader["itemID"].ToString();
+                            string itemCode = reader["itemCode"].ToString();
                             string itemName = reader["itemName"].ToString();
                             string itemType = reader["itemType"].ToString();
                             string brand = reader["brand"].ToString();
                             string remarks = reader["remarks"].ToString();
-                            int qtyBorrowed = Convert.ToInt32(reader["qtyBorrowed"]);
+                            int quantityOnStock = Convert.ToInt32(reader["quantityOnStock"]);
 
 
                             list.Add(new itemCollection
                             {
-                                itemID = itemID,
+                                itemCode = itemCode,
                                 itemName = itemName,
                                 brand = brand,
                                 itemType = itemType,
-                                qty = qtyBorrowed,
+                                qty = quantityOnStock,
                                 remarks = remarks,
                             });
 
@@ -90,7 +127,6 @@ namespace CSBorrowingSystem
         {
             var addItem = new AddItem();
             addItem.Show();
-           
         }
     }
 }
