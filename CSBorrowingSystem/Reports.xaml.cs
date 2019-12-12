@@ -64,7 +64,6 @@ namespace CSBorrowingSystem
             _Adapter.Fill(_Bind, "MyDataBinding");
 
             dtgRecords.DataContext = _Bind;
-
             // Close the Database Connection
             _Conn.Close();
 
