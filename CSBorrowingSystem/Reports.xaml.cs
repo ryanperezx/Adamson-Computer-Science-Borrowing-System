@@ -58,7 +58,7 @@ namespace CSBorrowingSystem
             // Open the Database Connection
             _Conn.Open();
 
-            SqlCeDataAdapter _Adapter = new SqlCeDataAdapter("Select * from Tbl_Borrows", _Conn);
+            SqlCeDataAdapter _Adapter = new SqlCeDataAdapter("Select * from Tbl_Borrow", _Conn);
 
             DataSet _Bind = new DataSet();
             _Adapter.Fill(_Bind, "MyDataBinding");
@@ -79,7 +79,7 @@ namespace CSBorrowingSystem
             // Open the Database Connection
             _Conn.Open();
 
-            SqlCeDataAdapter _Adapter = new SqlCeDataAdapter("Select * from Tbl_Returns", _Conn);
+            SqlCeDataAdapter _Adapter = new SqlCeDataAdapter("Select * from Tbl_Return", _Conn);
 
             DataSet _Bind = new DataSet();
             _Adapter.Fill(_Bind, "MyDataBinding");

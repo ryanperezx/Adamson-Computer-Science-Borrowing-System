@@ -129,5 +129,10 @@ namespace CSBorrowingSystem
         {
 
         }
+
+        private void BtnRefresh_Click(object sender, RoutedEventArgs e)
+        {
+            LoadCollectionData();
+        }
     }
 }

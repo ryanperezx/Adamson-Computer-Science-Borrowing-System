@@ -57,7 +57,9 @@
                 
             </DataGrid.Columns>
         </DataGrid>
-
+        <Button x:Name="btnRefresh" Cursor="Hand" Click="BtnRefresh_Click" Margin="15.333,4,0,5" Grid.Column="4" Grid.Row="1" Grid.ColumnSpan="2">
+            Refresh
+        </Button>
         <DockPanel Grid.RowSpan="19" Grid.Column="7" Grid.ColumnSpan="3" Background="#FFE2F5F9"/>
         <TextBlock Grid.Column="8" Grid.Row="3" FontFamily="Raleway Black" FontSize="16" Margin="0,27,0,0" Foreground="Black" TextAlignment="Center" Text="BORROWER'S INFORMATION"/>
         <TextBlock Grid.Column="8" Grid.Row="5" Text="FULL NAME" FontFamily="Raleway SemiBold" Foreground="Black" Margin="10,10,0,0" />

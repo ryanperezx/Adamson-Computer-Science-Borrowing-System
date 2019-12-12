@@ -47,7 +47,7 @@
         <ScrollViewer Background="Green" Height="462.989"  VerticalAlignment="Top" VerticalScrollBarVisibility="Auto" Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="3" Grid.RowSpan="3" Visibility="Hidden">
             <StackPanel x:Name="AdminSP" Background="White" />
         </ScrollViewer>
-        <local:AddSA  x:Name="AddSAForm" Visibility="Hidden" Grid.Column="5" Grid.RowSpan="8"  Grid.ColumnSpan="3" Margin="7.788,0,7.416,0"/>
+        <local:AddSA  x:Name="AddSAForm" Visibility="Visible" Grid.Column="5" Grid.RowSpan="8"  Grid.ColumnSpan="3" Margin="0,0,-4.58,0"/>
 
 
 
