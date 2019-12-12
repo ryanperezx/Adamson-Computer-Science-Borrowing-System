@@ -48,12 +48,12 @@
             <DataGrid.Columns>
                 <DataGridCheckBoxColumn Header="TO BORROW" Binding="{Binding isBorrow}"/>
                 <DataGridTextColumn Header="ITEM CODE"  Binding="{Binding itemCode}" IsReadOnly="True" />
-                <DataGridTextColumn Header="ITEM NAME"  Binding="{Binding itemName}"/>
-                <DataGridTextColumn Header="ITEM BRAND" Binding="{Binding brand}"/>
+                <DataGridTextColumn Header="ITEM NAME"  Binding="{Binding itemName}" IsReadOnly="True"/>
+                <DataGridTextColumn Header="ITEM BRAND" Binding="{Binding brand}" IsReadOnly="True"/>
                 <DataGridTextColumn Header="QUANTITY" Binding="{Binding qty}"/>
                 <DataGridTextColumn Header="STOCK" Binding="{Binding QuantityOnStock}" IsReadOnly="True" />
-                <DataGridTextColumn Header="SUBJECT" Binding="{Binding subject}"/>
-                <DataGridTextColumn Header="REMARKS" Binding="{Binding remarks}"/>
+                
+                <DataGridTextColumn Header="REMARKS" Binding="{Binding remarks}" IsReadOnly="True"/>
                 
             </DataGrid.Columns>
         </DataGrid>

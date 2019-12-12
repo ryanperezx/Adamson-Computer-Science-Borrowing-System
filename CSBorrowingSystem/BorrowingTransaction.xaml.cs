@@ -43,7 +43,7 @@ namespace CSBorrowingSystem
             SqlCeConnection conn = DBUtils.GetDBConnection();
             conn.Open();
             list.Clear();
-            using (SqlCeCommand cmd = new SqlCeCommand("SELECT it.itemName, it.QuantityOnStock, it.brand, b.qtyBorrowed, b.itemCode, b.subjectName from tbl_Borrow b INNER JOIN tbl_Items it on it.itemCode = b.itemCode", conn))
+            using (SqlCeCommand cmd = new SqlCeCommand(" SELECT itemName, brand, QuantityOnStock, itemCode from tbl_Items", conn))
             {
                 using (DbDataReader reader = cmd.ExecuteResultSet(ResultSetOptions.Scrollable))
                 {
@@ -54,9 +54,9 @@ namespace CSBorrowingSystem
                             string itemName = reader["itemName"].ToString();
                             string brand = reader["brand"].ToString();
                             string QuantityOnStock = reader["QuantityOnStock"].ToString();
-                            string subject = reader["subjectName"].ToString();
+                            
                             string itemCode = reader["itemCode"].ToString();
-                            int qtyBorrowed = Convert.ToInt32(reader["qtyBorrowed"]);
+                            
 
 
                             list.Add(new itemCollection1
@@ -64,9 +64,9 @@ namespace CSBorrowingSystem
                                 itemName = itemName,
                                 brand = brand,
                                 itemCode = itemCode,
-                                qty = qtyBorrowed,
+                                
                                 QuantityOnStock = QuantityOnStock,
-                                subject = subject
+                                
                             });
 
                         }
